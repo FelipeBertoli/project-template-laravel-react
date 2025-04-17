@@ -1,0 +1,153 @@
+/*#region ESTILOS GERAIS*/
+.text-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  width: 17rem;
+  position: relative;
+}
+
+.text-input-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--box-shadow);
+  border: var(--border);
+  border-radius: var(--border-radius);
+  background-color: rgb(243, 243, 243);
+  transition: var(--transition);
+  font-size: 14px;
+  padding: var(--input-padding);
+  width: 100%;
+}
+
+.text-input-box:focus-within {
+  border: 1px solid var(--primary-active);
+  outline: 2px solid var(--primary-active);
+}
+
+.text-input-field {
+  background: transparent;
+  border: none;
+  outline: none;
+  height: 100%;
+  width: 100%;
+  font-size: 14px;
+}
+
+.text-input-icon {
+  position: relative;
+  right: -2%;
+  font-size: 1rem;
+  color: var(--secondary);
+  background-color: rgb(243, 243, 243);
+  height: 50%;
+  padding: 0 0.5rem;
+}
+
+/*#endregion*/
+
+/*#region DROPDOWN*/
+.dropdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+}
+
+.dropdown.active {
+  border: 1px solid var(--primary-active);
+  outline: 2px solid var(--primary-active);
+}
+
+.dropdown-arrow {
+  font-size: 1rem;
+  color: var(--secondary);
+  padding-right: 3px;
+}
+
+.dropdown-options {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #f2f2f2;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  max-height: 200px;
+  overflow-y: auto;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 4px;
+}
+
+.dropdown-option {
+  padding: 10px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #1e1e1e;;
+}
+
+.dropdown-option:hover {
+  background-color: var(--white-hover);
+}
+
+.dropdown-option.selected {
+  background-color: var(--primary-active);
+  color: #f2f2f2;
+}
+
+.dropdown-option.placeholder {
+  color: gray;
+  background-color: rgb(243, 243, 243);
+}
+
+.dropdown-placeholder {
+  color: gray;
+}
+
+/*#endregion*/
+
+/*#region DATEPICKER*/
+.react-datepicker-popper {
+  left: 20% !important;
+}
+/*#endregion*/
+
+/*#region RADIO BUTTON*/
+.radio-button {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.radio-button input[type="radio"] {
+  accent-color: var(--primary);
+  transform: scale(1.3);
+}
+/*#endregion*/
+
+/*#region ADD INPUT*/
+.add-input {
+
+  width: 17.8rem;
+}
+
+.add-input .text-input-box {
+  padding: 0;
+}
+
+.add-input .text-input-field {
+  padding: var(--input-padding);
+}
+
+.add-input .icon-button {
+  padding-bottom: .1px;
+  margin-right: 8px;
+}
+
+/*#endregion*/

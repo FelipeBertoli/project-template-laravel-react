@@ -1,0 +1,163 @@
+/* ----- Estilos Gerais de Botão ----- */
+.button {
+  box-shadow: var(--box-shadow);
+  color: white;
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.button:hover {
+
+  transform: scale(1.03);
+}
+
+
+/* ----- Botões principais ----- */
+.main-button {
+  border-radius: 1rem;
+  padding: 0.5rem 0;
+  width: 17rem;
+}
+
+/*#region ICON BUTTON*/
+.icon-button {
+  border-radius: 3rem;
+  overflow: hidden;
+  object-fit: cover;
+  display: flex;
+      align-items: center;
+      justify-content: center;
+
+  
+}
+.icon-button i {
+  color: #f2f2f2;
+}
+
+
+.icon-button:hover {
+  color: #f2f2f2;
+  background: var(--primary-hover);
+  transform: scale(1.1);
+}
+
+.icon-button.tiny {
+  width: 25px;
+  height: 25px;
+  font-size: 12.5px;
+}
+
+.icon-button.small {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+}
+
+.icon-button.x-small {
+  width: 50px;
+  height: 50px;
+  font-size: 25px;
+}
+
+.icon-button.medium {
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+}
+
+.icon-button.large {
+  width: 80px;
+  height: 80px;
+  font-size: 40px;
+}
+
+/*#endregion*/
+
+/*#region ACTION BUTTON*/
+.action-button {
+  display: inline-flex;
+  gap: 0.5rem;
+  border-radius: var(--border-radius);
+  padding: 0.3rem 0.6rem;
+  width: fit-content;
+}
+
+.action-button span {
+  font-size: smaller;
+}
+
+/*#endregion*/
+
+/*#region CORES DE BOTÕES*/
+.primary {
+  background-color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.primary:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+.secondary {
+  background-color: var(--secondary);
+  border: 2px solid var(--secondary);
+}
+
+.secondary:hover {
+  background-color: var(--secondary-hover);
+  border-color: var(--secondary-hover);
+}
+
+/*#endregion*/
+
+/*#region TIPOS DE BOTÕES*/
+
+.outlined {
+  background-color: var(--menu-background);
+  border: 2px solid currentColor;
+}
+
+.outlined i {
+  color: var(--primary);
+}
+
+.text {
+  background-color: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.text i{
+  color: var(--primary);
+}
+
+.outlined:hover,
+.text:hover {
+  background-color: var(--white-hover);
+}
+
+.outlined.primary,
+.text.primary {
+  color: var(--primary);
+}
+
+.outlined.secondary,
+.text.secondary,
+.outlined.secondary i,
+.text.secondary i{
+  color: var(--secondary);
+}
+
+.outlined.primary:hover,
+.text.primary:hover {
+  color: var(--primary-hover);
+}
+
+.outlined.secondary:hover,
+.text.secondary:hover {
+  color: var(--secondary-hover);
+}
+/*#endregion*/

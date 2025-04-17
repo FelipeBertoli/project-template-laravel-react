@@ -1,0 +1,9 @@
+.radio-group {
+    width: 17rem;
+}
+
+.radio-buttons-container {
+    display: flex;
+    justify-content: space-around;
+    padding: .5rem 0;
+}

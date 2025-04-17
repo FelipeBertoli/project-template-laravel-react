@@ -1,0 +1,21 @@
+.input-label {
+    font-size: 13px;
+    font-weight: bold;
+    padding-left: .3rem;
+    text-transform: uppercase;
+}
+
+.input-label-required {
+    color: red;
+}
+
+.link {
+    cursor: pointer;
+    color: var(--secondary);
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.link:hover {
+    transform: scale(1.1);
+}

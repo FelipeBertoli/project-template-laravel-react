@@ -1,0 +1,165 @@
+/* --------------- ROOT --------------- */
+:root {
+    --hybrid-header-height: 7vh;
+    --header-border-color: var(--primary);
+}
+
+/*#region ---------------Estilos Gerais de Header---------------*/
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    background-color: var(--menu-background);
+    z-index: 99999;
+    position: fixed;
+}
+
+.header > * {
+    padding: 0 1rem;
+}
+
+/* Logo e Alinhamento */
+.header-logo {
+    width: 6.5rem;
+    object-fit: contain;
+  }
+  
+
+.header-flex {
+    display: flex;
+    align-items: center;
+    gap: .1rem;
+}
+
+.header-right {
+    display: flex;
+    gap: .5rem;
+    padding-right:  3rem;
+}
+
+.header-left {
+    gap: 4rem;
+}
+
+.header-left.menu {
+    gap: 2rem;
+    padding: 0;
+}
+
+/* Borda do Header*/
+.header.basic {
+    border-bottom: var(--border);
+}
+
+.header.colorful {
+    border-bottom: 2.5px solid var(--primary);
+}
+
+
+/* Sombra do Header */
+.header-shadow {
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Navegação do Header */
+.header-nav {
+    gap: 1.5rem;
+}
+
+.header.contained-nav {
+    padding: .5rem 0;
+}
+
+.header-nav-item {
+    text-transform: uppercase;
+    font-size: 13.5px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    color: var(--primary);
+}
+
+.header-nav-item.active {
+    color: var(--primary-active);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+    transition: var(--transition);
+}
+
+.header-nav-item:hover {
+    background-color: var(--primary);
+    color: white;
+    text-decoration: none;
+}
+
+/* Estilo para os itens da nav */
+.header-nav-item.full {
+    height: var(--header-height);
+    padding: 0 .5rem;
+}
+
+.header-nav-item.contained {
+    border-radius: var(--border-radius);
+    padding: .5rem;
+}
+
+.header-nav-item.outlined {
+    border-radius: var(--border-radius);
+    padding: .5rem;
+}
+
+.header-nav-item.outlined.active {
+    background: var(--secondary-active);
+    color: white;
+    border: var(--secondary-active);
+    border-radius: var(--border-radius);
+    padding: .5rem;
+    text-decoration: none;
+}
+
+/*#endregion*/
+
+/* --------------- FLOAT HEADER --------------- */
+.float-header {
+    background-color: white;
+    width: fit-content;
+    padding: 0 1rem;
+    border-radius: 1rem;
+    position: fixed;
+    left: 50%;
+    top: 2.5vh;
+    z-index: 99999;
+    transform: translate(-50%, 0%);
+}
+
+/* Estilos de borda para o float-header */
+.float-header.basic {
+    border: var(--border);
+}
+
+.float-header.colorful {
+    border: 2.5px solid var(--primary);
+}
+
+.float-header .header-nav-item {
+    font-size: 12px;
+}
+
+.float.header > * {
+    padding: 0 1.5rem;
+}
+
+.float-header.contained-nav {
+    padding: .5rem 1.5rem;
+}
+
+.float-header-shadow {
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* --------------- HYBRID HEADER --------------- */
+.hybrid {
+    height: var(--header-height);
+}

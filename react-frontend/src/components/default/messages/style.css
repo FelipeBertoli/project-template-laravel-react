@@ -1,0 +1,26 @@
+.tooltip-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:.3rem;
+    background-color: var(--error);
+    border-radius: .3rem;
+    padding: .2rem .4rem;
+    margin: .3rem;
+    width: fit-content;
+}
+
+.tooltip-container i {
+    color: var(--text);
+
+}
+
+.tooltip-container span {
+
+    color: var(--text);
+
+    font-size: 10px;
+    font-weight: 700;
+
+
+}
