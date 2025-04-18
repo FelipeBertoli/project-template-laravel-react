@@ -1,9 +1,29 @@
 .radio-group {
-    width: 17rem;
+  width: 17rem;
 }
 
 .radio-buttons-container {
-    display: flex;
-    justify-content: space-around;
-    padding: .5rem 0;
+  display: flex;
+  justify-content: space-around;
+  padding: .5rem 0;
+}
+
+
+.button-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+  padding-top: 1.2rem;
+}
+
+.input-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+  padding-bottom: 1rem;
+}
+
+.input-form-group a {
+  font-size: 12px;
+  align-self: flex-end;
 }

@@ -1,21 +1,30 @@
 .input-label {
-    font-size: 13px;
-    font-weight: bold;
-    padding-left: .3rem;
-    text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+  padding-left: .3rem;
 }
 
 .input-label-required {
-    color: red;
+  color: red;
 }
 
 .link {
-    cursor: pointer;
-    color: var(--secondary);
-    font-size: 15px;
-    font-weight: 900;
+  cursor: pointer;
+  color: var(--color-primary);
+  font-size: 14px;
+  font-weight: 500;
+  height: 95%;
+  text-decoration: none;
+  text-underline-offset: 3px;
+}
+
+.link.grey {
+  color: var(--color-text-secondary);
 }
 
 .link:hover {
-    transform: scale(1.1);
+  color: var(--color-primary-hover);
+  transform: scale(1.02);
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
 }

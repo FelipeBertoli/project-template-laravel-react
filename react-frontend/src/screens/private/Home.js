@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { login, logout } from '../../../utils/services/AuthService';
+import {  logout } from '../../utils/services/AuthService';
 
-export default function Home() {
+export default function HomePrivate() {
   const navigate = useNavigate();
 
   async function handleLogout() {

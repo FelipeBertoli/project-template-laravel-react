@@ -10,6 +10,7 @@ import IconButton from '../buttons/IconButton';
 export default function FloatHeader({
   borderStyle = 'basic',
   navItemStyle = 'contained',
+  showActions = false,
   showShadow = false }) {
 
   const [headerShadow, setHeaderShadow] = useState('');
@@ -22,9 +23,9 @@ export default function FloatHeader({
 
   return (
     <div className={headerClasses}>
-      <div className="header-left header-flex">
 
-        <img src="/assets/logo.png" className="header-logo" alt="Logo do header" srcset="" />
+
+        <img src="/assets/logo.png" className="logo header-logo" alt="Logo do header" srcset="" />
 
         <nav className="header-nav header-flex">
           <a href="#" className={`header-nav-item ${navItemStyle} active`}>Nav Item</a>
@@ -32,7 +33,13 @@ export default function FloatHeader({
           <a href="#" className={`header-nav-item ${navItemStyle}`}>Nav Item</a>
 
         </nav>
-      </div>
+
+      {showActions &&
+        <div className="header-right header-flex">
+          <IconButton size='sm' color='secondary' type='contained' />
+          <IconButton size='sm' color='secondary' type='contained' />
+          <IconButton size='sm' color='secondary' type='contained' />
+        </div>}
     </div>
   )
 }

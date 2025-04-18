@@ -1,9 +1,9 @@
 .side-menu {
   position: absolute;
   top: 0;
-  left: 0;
+  left: -1px;
   height: 100vh;
-  background-color: var(--secondary);
+  background-color: var(--color-background-soft);
   box-shadow: var(--shadow);
   flex-direction: column;
   z-index: 1000;
@@ -38,7 +38,7 @@
 }
 
 .menu-toggle i {
-  color: var(--primary);
+  color: var(--color-primary);
   font-size: large;
 }
 
@@ -58,7 +58,7 @@
 }
 
 .menu-nav-item {
-  color: var(--text);
+  color: #FFFFFF;
   height: 7vh;
   width: 10vw;
   display: flex;
@@ -70,13 +70,12 @@
 }
 
 .menu-nav-item:hover {
-  background: var(--secondary-hover);
-  color: var(--text);
+  background: var(--color-secondary-hover);
 }
 
 .menu-nav-item.active {
   background-color: #f2f2f2;
-  color: var(--secondary);
+  color: var(--color-secondary);
   border-right: var(--border);
 }
 

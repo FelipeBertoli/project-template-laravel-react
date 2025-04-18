@@ -4,7 +4,7 @@
   color: white;
   cursor: pointer;
   transition: var(--transition);
-  font-weight: 900;
+  font-weight: 600;
   text-transform: uppercase;
 }
 
@@ -27,47 +27,52 @@
   overflow: hidden;
   object-fit: cover;
   display: flex;
-      align-items: center;
-      justify-content: center;
-
-  
+  align-items: center;
+  justify-content: center;
 }
+
 .icon-button i {
   color: #f2f2f2;
 }
 
-
 .icon-button:hover {
   color: #f2f2f2;
-  background: var(--primary-hover);
+  background: var(--color-primary-hover);
   transform: scale(1.1);
 }
 
-.icon-button.tiny {
+.icon-button.xs {
   width: 25px;
   height: 25px;
   font-size: 12.5px;
 }
 
-.icon-button.small {
+.icon-button.sm {
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+}
+
+
+.icon-button.md {
   width: 40px;
   height: 40px;
   font-size: 20px;
 }
 
-.icon-button.x-small {
+.icon-button.lg {
   width: 50px;
   height: 50px;
   font-size: 25px;
 }
 
-.icon-button.medium {
+.icon-button.xl{
   width: 60px;
   height: 60px;
   font-size: 30px;
 }
 
-.icon-button.large {
+.icon-button.xxl{
   width: 80px;
   height: 80px;
   font-size: 40px;
@@ -92,23 +97,23 @@
 
 /*#region CORES DE BOTÕES*/
 .primary {
-  background-color: var(--primary);
-  border: 2px solid var(--primary);
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-primary);
 }
 
 .primary:hover {
-  background-color: var(--primary-hover);
-  border-color: var(--primary-hover);
+  background-color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
 }
 
 .secondary {
-  background-color: var(--secondary);
-  border: 2px solid var(--secondary);
+  background-color: var(--color-secondary);
+  border: 2px solid var(--color-secondary);
 }
 
 .secondary:hover {
-  background-color: var(--secondary-hover);
-  border-color: var(--secondary-hover);
+  background-color: var(--color-secondary-hover);
+  border-color: var(--color-secondary-hover);
 }
 
 /*#endregion*/
@@ -121,7 +126,11 @@
 }
 
 .outlined i {
-  color: var(--primary);
+  color: var(--color-primary);
+}
+
+.outlined i:hover {
+  color: var(--color-primary-hover);
 }
 
 .text {
@@ -130,8 +139,8 @@
   box-shadow: none;
 }
 
-.text i{
-  color: var(--primary);
+.text i {
+  color: var(--color-primary);
 }
 
 .outlined:hover,
@@ -141,23 +150,28 @@
 
 .outlined.primary,
 .text.primary {
-  color: var(--primary);
+  color: var(--color-primary);
 }
 
 .outlined.secondary,
 .text.secondary,
 .outlined.secondary i,
-.text.secondary i{
-  color: var(--secondary);
+.text.secondary i {
+  color: var(--color-secondary);
+}
+
+.text.secondary:hover i {
+  color: var(--color-primary-hover);
 }
 
 .outlined.primary:hover,
 .text.primary:hover {
-  color: var(--primary-hover);
+  color: var(--color-primary-hover);
 }
 
 .outlined.secondary:hover,
 .text.secondary:hover {
-  color: var(--secondary-hover);
+  color: var(--color-secondary-hover);
 }
+
 /*#endregion*/

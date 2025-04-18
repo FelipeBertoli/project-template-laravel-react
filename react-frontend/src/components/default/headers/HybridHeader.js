@@ -2,17 +2,17 @@ import React, { useEffect, useState } from 'react';
 import './style.css';
 import IconButton from '../buttons/IconButton';
 import Menu from '../menus/Menu';
+import { Logo } from '../../ComponentsModule';
 
 /**
  * Props do Componente
  * @param {string} borderStyle - null (Default), basic, colorful
- * @param {string} navItemStyle - contained, full
- * @param {boolean} showNav - true, false (Default)
  * @param {boolean} showActions - true, false (Default)
  * @param {boolean} showShadow - true, false (Default)
  */
 export default function HybridHeader({
-  borderStyle = 'colorful',
+  itemAlign = 'end',
+  borderStyle = 'basic',
   showActions = false,
   showShadow = true
 }) {
@@ -21,7 +21,7 @@ export default function HybridHeader({
 
   useEffect(() => {
     showShadow && setHeaderShadow('header-shadow');
-  }, []);
+  }, [showShadow]);
 
   const hybridHeaderClasses = `header hybrid ${borderStyle} ${headerShadow}`;
 
@@ -29,24 +29,21 @@ export default function HybridHeader({
 
   return (
     <div className={hybridHeaderClasses}>
-
-      <div className="header-left header-flex menu">
-        <button className="menu-toggle" onClick={toggleMenu}>
+      <button className="menu-toggle" onClick={toggleMenu}>
         {menuOpen ? <i class="fi fi-ss-cross"></i> : <i class="fi fi-ss-menu-burger"></i>}
-        </button>
+      </button>
+      <Logo />
+      <div className={`header-toolbar header-flex ${itemAlign}`}>
 
-        <img src="/assets/logo.png" className="header-logo" alt="Logo do header" />
-
+        {showActions &&
+          <div className="header-actions header-flex">
+            <IconButton size='sm' color='secondary' type='contained' />
+            <IconButton size='sm' color='secondary' type='contained' />
+            <IconButton size='sm' color='secondary' type='contained' />
+          </div>}
       </div>
 
-      {showActions && (
-        <div className="header-right header-flex">
-          <IconButton size="small" type="contained"/>
-          <IconButton size="small" type="text" />
-          <IconButton size="small" type="outlined" />
-        </div>
-      )}
-      <Menu isOpen={menuOpen} fromHeader={true} type="classic"/>
+      <Menu isOpen={menuOpen} fromHeader={true} type="float" />
     </div>
   );
 }

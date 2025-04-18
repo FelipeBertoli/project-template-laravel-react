@@ -7,14 +7,21 @@
   position: relative;
 }
 
+::placeholder {
+  color: var(--color-placeholder);
+  font-style: italic;
+  opacity: 1; 
+}
+
+
 .text-input-box {
   display: flex;
   align-items: center;
   justify-content: space-between;
   box-shadow: var(--box-shadow);
   border: var(--border);
-  border-radius: var(--border-radius);
-  background-color: rgb(243, 243, 243);
+  border-radius: var(--border-radius-sm);
+  background-color: #ffffff;
   transition: var(--transition);
   font-size: 14px;
   padding: var(--input-padding);
@@ -22,8 +29,8 @@
 }
 
 .text-input-box:focus-within {
-  border: 1px solid var(--primary-active);
-  outline: 2px solid var(--primary-active);
+  border: 1px solid var(--color-primary);
+ outline: 1px solid var(--color-primary); 
 }
 
 .text-input-field {
@@ -39,8 +46,7 @@
   position: relative;
   right: -2%;
   font-size: 1rem;
-  color: var(--secondary);
-  background-color: rgb(243, 243, 243);
+  color: var(--color-secondary);
   height: 50%;
   padding: 0 0.5rem;
 }
@@ -54,16 +60,17 @@
   align-items: center;
   user-select: none;
   cursor: pointer;
+  color: black;
 }
 
 .dropdown.active {
-  border: 1px solid var(--primary-active);
-  outline: 2px solid var(--primary-active);
+  border: 1px solid var(--color-primary);
+  outline: 2px solid var(--color-primary);
 }
 
 .dropdown-arrow {
   font-size: 1rem;
-  color: var(--secondary);
+  color: var(--color-secondary);
   padding-right: 3px;
 }
 
@@ -72,7 +79,8 @@
   margin: 4px 0 0;
   padding: 0;
   width: 100%;
-  border: 1px solid #ccc;
+  border: var(--border);
+  color: black;
   background: #f2f2f2;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -89,25 +97,23 @@
   padding: 10px 12px;
   cursor: pointer;
   font-size: 14px;
-  color: #1e1e1e;;
+  color: #000000;
 }
 
 .dropdown-option:hover {
-  background-color: var(--white-hover);
+  background-color: var(--color-grey);
 }
 
 .dropdown-option.selected {
-  background-color: var(--primary-active);
-  color: #f2f2f2;
+  color: #0A0A0A;
+  font-weight: bolder;
+  background-color: var(--color-primary-active);
 }
 
+.dropdown-placeholder,
 .dropdown-option.placeholder {
-  color: gray;
-  background-color: rgb(243, 243, 243);
-}
-
-.dropdown-placeholder {
-  color: gray;
+  color: var(--color-placeholder);
+  font-style: italic;
 }
 
 /*#endregion*/
@@ -126,7 +132,7 @@
 }
 
 .radio-button input[type="radio"] {
-  accent-color: var(--primary);
+  accent-color: var(--color-primary);
   transform: scale(1.3);
 }
 /*#endregion*/

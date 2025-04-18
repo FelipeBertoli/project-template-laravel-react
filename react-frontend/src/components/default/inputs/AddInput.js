@@ -11,7 +11,7 @@ export default function AddInput({ label, placeholder, type, value, onChange, me
 
             <div className='text-input-box '>
                 <input className='text-input-field' placeholder={placeholder} type={type} value={value} onChange={onChange} required={required} />
-                <IconButton icon="fi fi-ss-plus" size='tiny' color="secondary" />
+                <IconButton icon="fi fi-ss-plus" size='xs' color="secondary" />
             </div>
             {message != null && <Tooltip message={message} />}
         </div>

@@ -14,7 +14,7 @@ function App() {
 
     <AuthProvider>
       <Router>
-        <Header type="hybrid" showActions={true} navItemStyle="contained"/>
+        <Header type="classic"/>
         <Routes>
           <Route path="/" element={<RootRoute />} />
         </Routes>

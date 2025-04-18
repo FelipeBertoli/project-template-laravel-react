@@ -1,48 +1,53 @@
 import React, { useEffect, useState } from 'react';
 import './style.css'
 import IconButton from '../buttons/IconButton';
+import { Logo } from '../../ComponentsModule';
 
 /** Props do Componente
+ * @param {string} itemAlign - null (Default), center
  * @param {string} borderStyle - null (Default), basic, colorful
- * @param {string} navItemStyle - contained (Default), full, outlined
+ * @param {string} navStyle - contained (Default), full, outlined
  * @param {boolean} showNav - true, false (Default)
  * @param {boolean} showActions - true, false (Default)
  * @param {boolean} showShadow - true, false (Default)
  */
-export default function ClassicHeader({ 
-  borderStyle = 'colorful', 
-  navItemStyle = 'outlined', 
-  showNav = true, 
-  showActions = false, 
-  showShadow = false}) {
+export default function ClassicHeader({
+  itemAlign = 'spacing',
+  borderStyle = 'basic',
+  navStyle = 'text',
+  navBorder = 'small-radius',
+  showNav = true,
+  showActions = true,
+  showShadow = true }) {
 
   const [headerShadow, setHeaderShadow] = useState('');
 
   useEffect(() => {
     showShadow && setHeaderShadow('header-shadow');
-  }, []);
-  
-  const headerClasses = `header ${borderStyle} ${headerShadow} ${navItemStyle === 'contained' || 'outlined' ? 'contained-nav' : ''}`;
+  }, [showShadow]);
+
+  const headerClasses = `header ${borderStyle} ${headerShadow} ${navStyle === 'contained' || navStyle === 'outlined' || navStyle === 'text' ? 'contained-nav' : ''}`;
+
 
   return (
     <div className={headerClasses}>
-      <div className="header-left header-flex">
-        
-        <img src="/assets/logo.png" className="header-logo" alt="Logo do header" srcset="" />
+      <Logo />
+      <div className={`header-toolbar header-flex ${itemAlign}`}>
         {showNav &&
           <nav className="header-nav header-flex">
-            <a href="#" className={`header-nav-item ${navItemStyle} active`}>Nav Item</a>
-            <a href="#" className={`header-nav-item ${navItemStyle}`}>Nav Item</a>
-            <a href="#" className={`header-nav-item ${navItemStyle}`}>Nav Item</a>
+            <a href="http://" className={`header-nav-item ${navStyle} ${navBorder} active`}>Nav Item</a>
+            <a href="http://" className={`header-nav-item ${navStyle} ${navBorder}`}>Nav Item</a>
+            <a href="http://" className={`header-nav-item ${navStyle} ${navBorder}`}>Nav Item</a>
 
           </nav>}
+        {showActions &&
+          <div className="header-actions header-flex">
+            <IconButton size='sm' color='secondary' type='contained' />
+            <IconButton size='sm' color='secondary' type='contained' />
+            <IconButton size='sm' color='secondary' type='contained' />
+          </div>}
       </div>
-      {showActions &&
-        <div className="header-right header-flex">
-          <IconButton size='small' color='secondary' type='contained'/>
-          <IconButton size='small' color='secondary' type='outlined'/>
-          <IconButton size='small' color='secondary' type='text'/>
-        </div>}
+
     </div>
   )
 }
