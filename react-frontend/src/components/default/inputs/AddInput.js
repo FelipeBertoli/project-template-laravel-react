@@ -1,7 +1,7 @@
 import React from 'react';
 import "./style.css";
 import InputLabel from '../texts/InputLabel';
-import Tooltip from '../messages';
+import Tooltip from '../messages/Tooltip';
 import IconButton from '../buttons/IconButton';
 
 export default function AddInput({ label, placeholder, type, value, onChange, message, required = false, icon }) {

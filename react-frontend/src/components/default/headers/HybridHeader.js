@@ -12,7 +12,6 @@ import { Logo } from '../../ComponentsModule';
  * @param {boolean} showActions: exibir botões de ação - true (default), false
  * @param {boolean} showShadow: exibir sombra do header - true (default), false
  */
-
 export default function HybridHeader({
   borderStyle = 'basic',
   itemAlign = 'end',

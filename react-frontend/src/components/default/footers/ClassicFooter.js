@@ -4,9 +4,9 @@ import IconButton from '../buttons/IconButton';
 import { Logo, TextLink } from '../../ComponentsModule';
 
 /** Props do Componente
- * @param {string} logoPosition: posição da logo - top (default), bottom
+ * @param {string} logoPosition: posição da logo -  bottom, top (default)
  */
-export default function ClassicFooter({logoPosition="top"}) {
+export default function ClassicFooter({logoPosition = "top"}) {
   const data = new Date().getFullYear();
 
   return (

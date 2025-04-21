@@ -1,5 +1,5 @@
 .radio-group {
-  width: 17rem;
+  width: var(--action-width);
 }
 
 .radio-buttons-container {

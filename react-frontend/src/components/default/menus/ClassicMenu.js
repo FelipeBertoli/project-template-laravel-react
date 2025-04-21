@@ -5,6 +5,11 @@ import NavLink from '../links/NavLink';
 import { logout } from '../../../utils/services/AuthService';
 import { useNavigate } from 'react-router-dom';
 
+/**
+ * Props do Componente
+ * @param {boolean} showProfile: exibe o perfil do usuário no final do componente - false, true (default)
+ * @param {boolean} sidebarOpen: condição de exibição do componente passada pelo componente pai (HybridHeader) - false (default), true
+ */
 export default function ClassicMenu({ showProfile = false, sidebarOpen }) {
     const sidebarRef = useRef(null);
     const navigate = useNavigate();
@@ -18,9 +23,8 @@ export default function ClassicMenu({ showProfile = false, sidebarOpen }) {
         <div className={`sidebar ${sidebarOpen ? 'open' : ''}`} ref={sidebarRef}>
             <div className="logo-details">
                 {
-                    sidebarOpen ? <Logo /> : <Logo width="50px" light={'/assets/logo-icon.png'} dark={'/assets/logo-icon.png'}/>
+                    sidebarOpen ? <Logo /> : <Logo width="50px" lightLogoPath={'/assets/logo-icon.png'} darkLogoPath={'/assets/logo-icon.png'} />
                 }
-
             </div>
 
             <ul className="nav-list">
@@ -34,16 +38,16 @@ export default function ClassicMenu({ showProfile = false, sidebarOpen }) {
                 <li><NavLink origin="menu" /></li>
                 <li><NavLink origin="menu" /></li>
                 {showProfile &&
-                                <li className="profile">
-                                <div className="profile-content">
-                                    <img src="/assets/logo-icon.png" alt="profileImg" />
-                                    <div className="profile-details">
-                                        <span>Name</span>
-                                        <small>Job</small>
-                                    </div>
-                                </div>
-                                <IconButton onClick={handleLogout} icon="log-out" size='md' type='contained' color='secondary' />
-                            </li>
+                    <li className="profile">
+                        <div className="profile-content">
+                            <img src="/assets/logo-icon.png" alt="profileImg" />
+                            <div className="profile-details">
+                                <span>Name</span>
+                                <small>Job</small>
+                            </div>
+                        </div>
+                        <IconButton onClick={handleLogout} icon="log-out" size='md' type='contained' color='secondary' />
+                    </li>
                 }
 
             </ul>

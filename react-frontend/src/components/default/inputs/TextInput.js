@@ -1,9 +1,21 @@
 import React, { useState } from 'react';
 import "./style.css";
 import InputLabel from '../texts/InputLabel';
-import Tooltip from '../messages';
+import Tooltip from '../messages/Tooltip';
 
-export default function TextInput({ label, placeholder, type, value, onChange, message, required = false, icon }) {
+/**
+ * Props do Componente
+ * @param {string} icon: ícone do componente
+ * @param {string} label: rótulo do componente
+ * @param {string} message: mensagem de ajuda, erro ou aviso
+ * @param {function} onChange: função de callback ao alterar o valor
+ * @param {string} placeholder: texto de sugestão no campo de input
+ * @param {boolean} required: define se o campo é obrigatório
+ * @param {string} type: tipo do componente - e-mail, password, text (default)
+ * @param {string} value: valor do componente
+ */
+
+export default function TextInput({ icon, label, message, onChange, placeholder, required = false, type='text', value }) {
   const [showPassword, setShowPassword] = useState(false);
 
   const inputType = type === 'password' && showPassword ? 'text' : type;
@@ -22,12 +34,10 @@ export default function TextInput({ label, placeholder, type, value, onChange, m
           required={required}
         />
 
-        {/* Ícone padrão (se existir e não for password) */}
         {icon != null && type !== 'password' && (
           <i className={`fi ${icon} text-input-icon`}></i>
         )}
 
-        {/* Ícone de mostrar/ocultar senha */}
         {type === 'password' && (
           <i
             className={`fi ${showPassword ? 'fi-ss-eye-crossed' : 'fi-ss-eye'} text-input-icon`}

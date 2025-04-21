@@ -24,8 +24,8 @@ export default function HomePublic() {
             <TextLink link="/" message='Texto'>Esqueceu sua senha?</TextLink>
           </InputFormGroup>
           <ButtonFormGroup>
-            <MainButton label="Entrar" onClick={handleLogin} />
-            <MainButton label="Cadastrar-se" onClick={handleLogin} type="text" />
+            <MainButton label="Entrar" action={handleLogin} />
+            <MainButton label="Cadastrar-se" action={handleLogin} type="text" />
           </ButtonFormGroup>
         </PageForm>
         <ThemeToggle/>

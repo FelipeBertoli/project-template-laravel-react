@@ -17,7 +17,6 @@ export default function FloatHeader({
   headerSize = 'default',
   itemAlign= 'center',
   navBorder = 'medium-radius',
-
   navStyle = 'contained',
   showActions = true,
   showShadow = false }) {

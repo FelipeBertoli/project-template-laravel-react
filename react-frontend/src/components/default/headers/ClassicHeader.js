@@ -13,8 +13,8 @@ import { Logo } from '../../ComponentsModule';
  * @param {boolean} showShadow: exibir sombra do header - true (default), false
  */
 export default function ClassicHeader({
-  itemAlign= 'spacing',
   borderStyle,
+  itemAlign= 'spacing',
   navStyle = 'text',
   navBorder = 'small-radius',
   showNav = true,
@@ -43,9 +43,9 @@ export default function ClassicHeader({
           </nav>}
         {showActions &&
           <div className="header-actions header-flex">
-            <IconButton size='sm' color='secondary' type='contained' />
-            <IconButton size='sm' color='secondary' type='contained' />
-            <IconButton size='sm' color='secondary' type='contained' />
+            <IconButton size='md' color='secondary' type='contained' />
+            <IconButton size='md' color='secondary' type='contained' />
+            <IconButton size='md' color='secondary' type='contained' />
           </div>}
       </div>
 

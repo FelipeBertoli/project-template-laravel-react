@@ -2,7 +2,16 @@ import React, { useState } from "react";
 import "./style.css";
 import InputLabel from "../texts/InputLabel";
 
-export default function Dropdown({ options, label, onChange, required = false }) {
+/**
+ * Props do Componente
+ * @param {string} label: rótulo do componente
+ * @param {string} message: mensagem de ajuda, erro ou aviso
+ * @param {function} onChange: função de callback ao alterar o valor
+ * @param {function} options: opções de valores do componente
+ * @param {boolean} required: define se o campo é obrigatório
+ * @param {string} value: valor do componente
+ */
+export default function Dropdown({ label, message, onChange, options, required = false, value }) {
   const defaultOption = { label: "Escolha uma opção", value: "" };
   const [selected, setSelected] = useState(defaultOption);
   const [open, setOpen] = useState(false);

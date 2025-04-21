@@ -16,7 +16,9 @@
 .main-button {
   border-radius: 1rem;
   padding: 0.5rem 0;
-  width: 17rem;
+  height: 2.5rem;
+  width: var(--action-width);
+  
 }
 
 /*#region ICON BUTTON*/

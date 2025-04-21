@@ -29,8 +29,8 @@ export {default as Footer} from "./default/footers/Footer";
 export {default as Menu} from "./default/menus/Menu";
 
 // Elementos de Página
-export {default as PageContainer} from "./default/pageElements/PageContainer";
-export {default as PageContent} from "./default/pageElements/PageContent";
-export {default as PageForm} from "./default/pageElements/PageForm";
-export {default as PageMain} from "./default/pageElements/PageMain";
+export {default as PageContainer} from "./default/layouts/PageContainer";
+export {default as PageContent} from "./default/layouts/PageContent";
+export {default as PageForm} from "./default/layouts/PageForm";
+export {default as PageMain} from "./default/layouts/PageMain";
 

@@ -23,9 +23,8 @@
 }
 
 /* Logo e Alinhamento */
-.header-logo {
+.header .logo {
     width: 10rem;
-    object-fit: contain;
   }
 
 
@@ -122,7 +121,7 @@
 }
 
 .header-nav-item.text{  
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
     text-transform: capitalize;
 }

@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
-export default function Logo({light = '/assets/logo-claro.png', dark = '/assets/logo-escuro.png', width='180px'}) {
+/**
+ * Props do Componente
+ * @param {string} darkLogoPath: caminho da logo do tema escuro
+ * @param {string} lightLogoPath: caminho da logo do tema claro
+ * @param {string} width: tamanho da logo
+ */
+export default function Logo({darkLogoPath = '/assets/logo-escuro.png', lightLogoPath= '/assets/logo-claro.png', width='180px'}) {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
@@ -9,26 +15,23 @@ export default function Logo({light = '/assets/logo-claro.png', dark = '/assets/
       setIsDark(isDarkTheme);
     };
 
-    // Verifica o tema na inicialização
     checkDarkMode();
 
-    // Observa mudanças no tema
     const observer = new MutationObserver(checkDarkMode);
     observer.observe(document.documentElement, {
       attributes: true,
       attributeFilter: ['data-theme']
     });
 
-    // Limpeza do observer quando o componente for desmontado
     return () => observer.disconnect();
   }, []);
 
-  const logoSrc = isDark ? light : dark;
+  const logoSrc = isDark ? lightLogoPath : darkLogoPath ;
 
   return (
     <img
       src={logoSrc}
-      className="logo header-logo"
+      className="logo"
       alt="Logo"
       style={{ width: width, height: 'auto' }}
     />
