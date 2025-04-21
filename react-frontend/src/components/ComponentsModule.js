@@ -10,6 +10,9 @@ export {default as ButtonFormGroup} from "./default/groups/ButtonFormGroup";
 export {default as InputFormGroup} from "./default/groups/InputFormGroup";
 export {default as RadioGroup} from "./default/groups/RadioGroup";
 
+// Links
+export {default as TextLink} from './default/links/TextLink';
+
 // Imagens 
 export {default as Logo} from "./default/images/Logo";
 
@@ -31,5 +34,3 @@ export {default as PageContent} from "./default/pageElements/PageContent";
 export {default as PageForm} from "./default/pageElements/PageForm";
 export {default as PageMain} from "./default/pageElements/PageMain";
 
-// Textos
-export {default as Link} from "./default/texts/Link";

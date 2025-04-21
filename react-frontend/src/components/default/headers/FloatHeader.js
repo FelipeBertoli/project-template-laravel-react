@@ -3,43 +3,53 @@ import './style.css'
 import IconButton from '../buttons/IconButton';
 
 /** Props do Componente
- * @param {string} borderStyle - null, basic (Default), colorful
- * @param {string} navItemStyle - contained (Default), full, outlined
- * @param {boolean} showShadow - true, false (Default)
+ * @param {string} borderStyle: estilo da borda do header - null (default), basic, colorful
+ * @param {string} headerBorder: arredondamento das bordas do header - navBorder - none-radius, small-radius (default), medium-radius, large-radius, round-radius
+ * @param {string} headerSize: width do tamanho do header - default (default), large
+ * @param {string} navBorder: arredondamento dos botões de navegação - none-radius, small-radius (default), medium-radius, large-radius, round-radius
+ * @param {string} navStyle: estilo dos botões de navegação - contained, full, outlined, text (default)
+ * @param {boolean} showActions: exibir botões de ação - true (default), false
+ * @param {boolean} showShadow: exibir sombra do header - true (default), false
  */
 export default function FloatHeader({
-  borderStyle = 'basic',
-  navItemStyle = 'contained',
-  showActions = false,
+  borderStyle = 'null',
+  headerBorder = 'round-radius',
+  headerSize = 'default',
+  itemAlign= 'center',
+  navBorder = 'medium-radius',
+
+  navStyle = 'contained',
+  showActions = true,
   showShadow = false }) {
 
   const [headerShadow, setHeaderShadow] = useState('');
 
   useEffect(() => {
-    showShadow && setHeaderShadow('float-header-shadow');
-  }, []);
+    showShadow && setHeaderShadow('float-shadow');
+  }, [showShadow]);
 
-  const headerClasses = `float-header ${borderStyle} ${headerShadow} ${navItemStyle === 'contained' || 'outlined' ? 'contained-nav' : ''}`;
+  const headerClasses = `float ${headerSize} ${headerBorder} ${borderStyle} ${headerShadow} ${navStyle === 'contained' || 'outlined' ? 'contained-nav' : ''}`;
 
   return (
     <div className={headerClasses}>
-
-
         <img src="/assets/logo.png" className="logo header-logo" alt="Logo do header" srcset="" />
 
-        <nav className="header-nav header-flex">
-          <a href="#" className={`header-nav-item ${navItemStyle} active`}>Nav Item</a>
-          <a href="#" className={`header-nav-item ${navItemStyle}`}>Nav Item</a>
-          <a href="#" className={`header-nav-item ${navItemStyle}`}>Nav Item</a>
+      <div className={`header-toolbar header-flex ${itemAlign}`}>
 
-        </nav>
+          <nav className="header-nav header-flex">
+            <a href="http://" className={`header-nav-item ${navStyle} ${navBorder} active`}>Nav Item</a>
+            <a href="http://" className={`header-nav-item ${navStyle} ${navBorder}`}>Nav Item</a>
+            <a href="http://" className={`header-nav-item ${navStyle} ${navBorder}`}>Nav Item</a>
 
-      {showActions &&
-        <div className="header-right header-flex">
-          <IconButton size='sm' color='secondary' type='contained' />
-          <IconButton size='sm' color='secondary' type='contained' />
-          <IconButton size='sm' color='secondary' type='contained' />
-        </div>}
+          </nav>
+        {showActions &&
+          <div className="header-actions header-flex">
+            <IconButton size='sm' color='secondary' type='contained' />
+            <IconButton size='sm' color='secondary' type='contained' />
+            <IconButton size='sm' color='secondary' type='contained' />
+          </div>}
+      </div>
+
     </div>
   )
 }

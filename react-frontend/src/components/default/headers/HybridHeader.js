@@ -6,18 +6,31 @@ import { Logo } from '../../ComponentsModule';
 
 /**
  * Props do Componente
- * @param {string} borderStyle - null (Default), basic, colorful
- * @param {boolean} showActions - true, false (Default)
- * @param {boolean} showShadow - true, false (Default)
+ * @param {string} borderStyle: estilo da borda do header - null (default), basic, colorful
+ * @param {string} itemAlign: tipo de espaçamento dos botões - spacing (default), center, end
+ * @param {string} menuType: tipo de menu - classic (default), float
+ * @param {boolean} showActions: exibir botões de ação - true (default), false
+ * @param {boolean} showShadow: exibir sombra do header - true (default), false
  */
+
 export default function HybridHeader({
-  itemAlign = 'end',
   borderStyle = 'basic',
-  showActions = false,
+  itemAlign = 'end',
+  menuType = 'slide',
+  showActions = true,
   showShadow = true
+
 }) {
   const [headerShadow, setHeaderShadow] = useState('');
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+
+  const getMenuIconClass = () => {
+    return sidebarOpen ? 'bx bx-x' : 'bx bx-menu';
+  };
 
   useEffect(() => {
     showShadow && setHeaderShadow('header-shadow');
@@ -25,14 +38,12 @@ export default function HybridHeader({
 
   const hybridHeaderClasses = `header hybrid ${borderStyle} ${headerShadow}`;
 
-  const toggleMenu = () => setMenuOpen(prev => !prev);
 
   return (
     <div className={hybridHeaderClasses}>
-      <button className="menu-toggle" onClick={toggleMenu}>
-        {menuOpen ? <i class="fi fi-ss-cross"></i> : <i class="fi fi-ss-menu-burger"></i>}
-      </button>
-      <Logo />
+
+      <i className={getMenuIconClass()} id="btn" onClick={toggleSidebar}></i>
+      {(menuType === 'float') && <Logo />}
       <div className={`header-toolbar header-flex ${itemAlign}`}>
 
         {showActions &&
@@ -43,7 +54,7 @@ export default function HybridHeader({
           </div>}
       </div>
 
-      <Menu isOpen={menuOpen} fromHeader={true} type="float" />
+      <Menu fromHeader={true} type={menuType} sidebarOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
     </div>
   );
 }

@@ -14,11 +14,11 @@ function App() {
 
     <AuthProvider>
       <Router>
-        <Header type="classic"/>
+        <Header/>
         <Routes>
           <Route path="/" element={<RootRoute />} />
         </Routes>
-        <Footer/>
+        <Footer type="classic"/>
       </Router>
     </AuthProvider>
 

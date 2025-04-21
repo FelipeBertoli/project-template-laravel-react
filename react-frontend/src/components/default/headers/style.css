@@ -4,7 +4,7 @@
     --header-border-color: var(--color-primary);
 }
 
-/*#region ---------------Estilos Gerais de Header---------------*/
+/*#region  Gerais de Header*/
 .header {
     display: flex;
     align-items: center;
@@ -37,6 +37,7 @@
 
 .header-toolbar {
     width: 100%;
+    gap: 1.5rem;
 }
 
 .header-toolbar.center{
@@ -52,8 +53,10 @@
     flex-direction: row-reverse;
 }
 
+.float .header-toolbar.end,
 .hybrid .header-toolbar.end {
     justify-content: end;
+    flex-direction: row;
 }
 
 .header-actions {
@@ -172,35 +175,42 @@
 
 /*#endregion*/
 
-/* --------------- FLOAT HEADER --------------- */
-.float-header {
+/*#region Float Header*/
+.float {
     display: flex;
     justify-content: space-between;
     background-color: white;
-    width: 80%;
     padding: 0 1.5rem;
-    border-radius: 10rem;
     position: fixed;
     left: 50%;
     top: 2.5vh;
     z-index: 99999;
     transform: translate(-50%, 0%);
+    gap: 1.5rem;
 }
 
-.float-header .logo {
+.float .logo {
     width: 8rem;
 }
 
-/* Estilos de borda para o float-header */
-.float-header.basic {
+.float.default {
+    width: fit-content;
+}
+
+.float.large {
+    width: 80%;
+}
+
+/* Estilos de borda para o float */
+.float.basic {
     border: var(--border);
 }
 
-.float-header.colorful {
+.float.colorful {
     border: 3px solid var(--color-primary);
 }
 
-.float-header .header-nav-item {
+.float .header-nav-item {
     font-size: 12px;
 }
 
@@ -208,15 +218,31 @@
     padding: 0 1.5rem;
 }
 
-.float-header.contained-nav {
+.float.contained-nav {
     padding: .5rem 1.5rem;
 }
 
-.float-header-shadow {
+.float-shadow {
     box-shadow: 0 0px 8px rgba(0, 0, 0, 0.5);
 }
+/*#endregion */
 
-/* --------------- HYBRID HEADER --------------- */
+/*#region Hybrid Header*/
 .hybrid {
     height: var(--header-height);
 }
+
+.hybrid:has(.sidebar) {
+    right: 0;
+    width: calc(100vw - 78px);
+}
+
+.hybrid:has(.sidebar.open) {
+    width: calc(100vw - 278px);
+}
+
+.hybrid:has(.float-menu) .logo{
+    padding-left: 5rem;
+}
+
+/*#endregion */

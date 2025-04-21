@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { login } from '../../utils/services/AuthService';
-import { ButtonFormGroup, InputFormGroup, Link, MainButton, PageContainer, PageForm, PageMain, TextInput } from '../../components/ComponentsModule';
+import { ButtonFormGroup, InputFormGroup, MainButton, PageContainer, PageForm, PageMain, TextInput, TextLink, ThemeToggle } from '../../components/ComponentsModule';
 
 export default function HomePublic() {
   const [email, setEmail] = useState('');
@@ -17,18 +17,18 @@ export default function HomePublic() {
   return (
     <PageMain>
       <PageContainer>
-        
         <PageForm title="Login">
           <InputFormGroup>
             <TextInput label="E-mail" type="email" value={email} placeholder={"Digite seu e-mail"} onChange={(e) => setEmail(e.target.value)} message={message} required />
             <TextInput label="Senha" type="password" value={password} placeholder={"Digite sua senha"} onChange={(e) => setPassword(e.target.value)} message={message} required />
-            <Link href="/" message='Texto'>Esqueceu sua senha?</Link>
+            <TextLink link="/" message='Texto'>Esqueceu sua senha?</TextLink>
           </InputFormGroup>
           <ButtonFormGroup>
             <MainButton label="Entrar" onClick={handleLogin} />
-            <MainButton label="Cadastrar-se" onClick={handleLogin} type="text" color="secondary" />
+            <MainButton label="Cadastrar-se" onClick={handleLogin} type="text" />
           </ButtonFormGroup>
         </PageForm>
+        <ThemeToggle/>
       </PageContainer>
 
     </PageMain>

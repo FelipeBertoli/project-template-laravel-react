@@ -6,7 +6,6 @@ import Tooltip from '../messages';
 export default function TextInput({ label, placeholder, type, value, onChange, message, required = false, icon }) {
   const [showPassword, setShowPassword] = useState(false);
 
-  // Define o tipo de input dinamicamente
   const inputType = type === 'password' && showPassword ? 'text' : type;
 
   return (

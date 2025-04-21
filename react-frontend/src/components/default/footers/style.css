@@ -4,15 +4,24 @@
     width: 100%;
 }
 
+.footer  .link {
+    color: var(--color-text-secondary);
+    width: fit-content;
+}
+
+/*#region Classic Footer*/
+
 .classic-footer-container {
     padding: 0 5.5rem;
+    padding-top: 1.5rem;
 }
 
 .classic-footer-flex {
     display: flex;
     justify-content: center;
     gap: 12rem;
-    padding: 1rem 0
+    padding: 1rem 0;
+    padding-bottom: 3rem;
 }
 
 .classic-footer-column {
@@ -29,6 +38,8 @@
 
 .classic-footer-column h6 {
     padding-bottom: .3rem;
+    text-transform: uppercase;
+    font-weight: 700;
     margin: 0;
 }
 
@@ -37,36 +48,27 @@
     gap: 1rem;
 }
 
-.footer-container {
-    display:grid;
-    grid-template-rows: repeat(3, 1fr);
-    gap: 2rem;               
-}
-
-.footer-nav {
-    display: flex;
-    gap: 3rem;
-    padding-top: 1.5rem;
-    justify-content: center;    
-    align-items: stretch;
-
-}
-
-.footer-actions {
-    display: flex;
-    gap: 3rem;    
-    align-items: stretch;
-
-    justify-content: center;
-}
-
 .footer-section {
     display: flex;
-    align-items: stretch;
+    align-items: center;
     gap: 3rem;
-    justify-content: center;
+    justify-content: space-between;
     padding: .9rem 0;
     border-top: var(--border);
+  }
+
+  .footer-section > * {
+    flex: 1;
+    text-align: center;
+  }
+
+  .footer-section small {
+    flex: 7;
+  }
+
+  .footer-section .logo {
+    position: absolute;
+    flex: 0 0;
   }
  
 .footer-bottom {
@@ -79,7 +81,7 @@
 }
 
 .footer-bottom a {
-    color: var(--color-text);
+    color: var(--color-text-main);
     font-family: 'Orbitron';
     font-weight: 700;
     text-transform: uppercase;
@@ -89,3 +91,24 @@
     color: #00B1FF;
     transform: scale(1.05);
 }
+/*#endregion*/
+
+/*#region Modern Footer*/
+.modern-footer-container {
+    padding: 0rem 5.5rem;
+    padding-top: 2.5rem;
+}
+
+.modern-footer-row {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    padding-bottom:1.5rem;
+}
+
+.modern-footer-row.icons {
+    gap: 1.5rem;
+    padding-bottom: 2.5rem;
+}
+
+/*#endregion*/

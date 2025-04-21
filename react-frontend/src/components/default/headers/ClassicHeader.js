@@ -4,16 +4,17 @@ import IconButton from '../buttons/IconButton';
 import { Logo } from '../../ComponentsModule';
 
 /** Props do Componente
- * @param {string} itemAlign - null (Default), center
- * @param {string} borderStyle - null (Default), basic, colorful
- * @param {string} navStyle - contained (Default), full, outlined
- * @param {boolean} showNav - true, false (Default)
- * @param {boolean} showActions - true, false (Default)
- * @param {boolean} showShadow - true, false (Default)
+ * @param {string} borderStyle: estilo da borda do header - null (default), basic, colorful
+ * @param {string} itemAlign: tipo de espaçamento dos botões - spacing (default), center, end
+ * @param {string} navBorder: arredondamento dos botões de navegação - none-radius, small-radius (default), medium-radius, large-radius, round-radius
+ * @param {string} navStyle: estilo dos botões de navegação - contained, full, outlined, text (default)
+ * @param {boolean} showActions: exibir botões de ação - true (default), false
+ * @param {boolean} showNav: exibir botões de navegação true (default), false
+ * @param {boolean} showShadow: exibir sombra do header - true (default), false
  */
 export default function ClassicHeader({
-  itemAlign = 'spacing',
-  borderStyle = 'basic',
+  itemAlign= 'spacing',
+  borderStyle,
   navStyle = 'text',
   navBorder = 'small-radius',
   showNav = true,

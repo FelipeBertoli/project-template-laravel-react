@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-export default function Logo({light = '/assets/logo-claro.png', dark = '/assets/logo-escuro.png'}) {
+export default function Logo({light = '/assets/logo-claro.png', dark = '/assets/logo-escuro.png', width='180px'}) {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
@@ -30,7 +30,7 @@ export default function Logo({light = '/assets/logo-claro.png', dark = '/assets/
       src={logoSrc}
       className="logo header-logo"
       alt="Logo"
-      style={{ width: '180px', height: 'auto' }}
+      style={{ width: width, height: 'auto' }}
     />
   );
 }

@@ -17,7 +17,7 @@ export default function DateSelector({ label, value, onChange, message, required
        {label != null && <InputLabel label={label} required={required} />}
       <div className='text-input-box'>
       <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} className='text-input-field datepicker' placeholderText="dd/mm/yyyy" dateFormat="dd/MM/yyyy" locale="pt-BR" />
-        <i className="fi fi-ss-calendar text-input-icon"></i>
+      <i class='bx bxs-calendar'></i>
       </div>
       
       {message != null &&

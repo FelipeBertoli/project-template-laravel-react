@@ -3,7 +3,7 @@ import axios from "axios";
 const baseURL = 'http://localhost:8000';
 
 const instance = axios.create({
-    baseURL: `${baseURL}/api/`, // Ajuste para evitar problemas de rota
+    baseURL: `${baseURL}/api/`,
     withCredentials: true,
     withXSRFToken: true,
     headers: {
@@ -12,7 +12,6 @@ const instance = axios.create({
     },
 });
 
-// Configurar token automaticamente caso exista
 const token = localStorage.getItem('token');
 if (token) {
     instance.defaults.headers.common['Authorization'] = `Bearer ${token}`;
