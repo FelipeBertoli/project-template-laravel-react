@@ -1,24 +1,51 @@
 /* ----- Estilos Gerais de Botão ----- */
 .button {
-  box-shadow: var(--box-shadow);
   color: white;
   cursor: pointer;
   font-weight: 600;
   text-transform: uppercase;
+  line-height: 0;
 }
 
 .button:hover {
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 
+.button span {
+  display: inline-block;
+}
+
+.button.disabled {
+  pointer-events: none;
+  cursor: initial;
+  transform: scale(1.0);
+}
+
+:is(button, .button).disabled{
+  filter: brightness(.8);
+}
+
+:is(.button.text, .button.outlined).disabled{
+  filter: brightness(.6);
+  background-color: transparent;
+}
 
 /* ----- Botões principais ----- */
-.main-button {
-  border-radius: 1rem;
-  padding: 0.5rem 0;
-  height: 2.5rem;
+.action-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  overflow: hidden;
+}
+
+.action-button.fit {  
+  width: fit-content;
+}
+
+.action-button.full {
   width: var(--action-width);
-  
 }
 
 /*#region ICON BUTTON*/
@@ -36,8 +63,6 @@
 }
 
 .icon-button:hover {
-  color: #f2f2f2;
-  background: var(--color-primary-hover);
   transform: scale(1.1);
 }
 
@@ -79,98 +104,3 @@
 
 /*#endregion*/
 
-/*#region ACTION BUTTON*/
-.action-button {
-  display: inline-flex;
-  gap: 0.5rem;
-  border-radius: var(--border-radius);
-  padding: 0.3rem 0.6rem;
-  width: fit-content;
-}
-
-.action-button span {
-  font-size: smaller;
-}
-
-/*#endregion*/
-
-/*#region CORES DE BOTÕES*/
-.primary {
-  background-color: var(--color-primary);
-  border: 2px solid var(--color-primary);
-}
-
-.primary:hover {
-  background-color: var(--color-primary-hover);
-  border-color: var(--color-primary-hover);
-}
-
-.secondary {
-  background-color: var(--color-secondary);
-  border: 2px solid var(--color-secondary);
-}
-
-.secondary:hover {
-  background-color: var(--color-secondary-hover);
-  border-color: var(--color-secondary-hover);
-}
-
-/*#endregion*/
-
-/*#region TIPOS DE BOTÕES*/
-
-.outlined {
-  background-color: var(--menu-background);
-  border: 2px solid currentColor;
-}
-
-.outlined i {
-  color: var(--color-primary);
-}
-
-.outlined i:hover {
-  color: var(--color-primary-hover);
-}
-
-.text {
-  background-color: transparent;
-  border: 0;
-  box-shadow: none;
-}
-
-.text i {
-  color: var(--color-primary);
-}
-
-.outlined:hover,
-.text:hover {
-  background-color: var(--white-hover);
-}
-
-.outlined.primary,
-.text.primary {
-  color: var(--color-primary);
-}
-
-.outlined.secondary,
-.text.secondary,
-.outlined.secondary i,
-.text.secondary i {
-  color: var(--color-secondary);
-}
-
-.text.secondary:hover i {
-  color: var(--color-primary-hover);
-}
-
-.outlined.primary:hover,
-.text.primary:hover {
-  color: var(--color-primary-hover);
-}
-
-.outlined.secondary:hover,
-.text.secondary:hover {
-  color: var(--color-secondary-hover);
-}
-
-/*#endregion*/

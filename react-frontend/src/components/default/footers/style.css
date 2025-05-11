@@ -1,6 +1,6 @@
 .footer {
-    background: var(--color-background-alt);
-    border-top: var(--border);
+    background: var(--color-background);
+    border-top: var(--line-border);
     width: 100%;
 }
 
@@ -54,7 +54,7 @@
     gap: 3rem;
     justify-content: space-between;
     padding: .9rem 0;
-    border-top: var(--border);
+    border-top: var(--line-border);
   }
 
   .footer-section > * {
@@ -95,20 +95,27 @@
 
 /*#region Modern Footer*/
 .modern-footer-container {
-    padding: 0rem 5.5rem;
-    padding-top: 2.5rem;
+    padding: 0rem 5dvw;
+    padding-top: 1.5rem;
 }
 
 .modern-footer-row {
     display: flex;
     justify-content: center;
     gap: 5rem;
-    padding-bottom:1.5rem;
+    padding-bottom:1rem;
 }
 
 .modern-footer-row.icons {
     gap: 1.5rem;
+    padding-top: 1rem;
     padding-bottom: 2.5rem;
 }
 
 /*#endregion*/
+
+@media (max-width: 576px) {
+    .modern-footer-row {
+        gap: 4rem;
+    }
+}   

@@ -5,6 +5,5 @@ import { useAuth } from '../context/AuthContext';
 export default function RootRoute() {
   const { isAuthenticated } = useAuth();
 
-  // Redireciona para área logada caso já esteja autenticado
   return isAuthenticated ? <HomePrivate/> : <HomePublic />;
 }

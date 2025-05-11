@@ -10,7 +10,7 @@ import Logo from '../images/Logo'
  * @param {string} size: define se o componente será solto ou ocupará metade da tela - size = full, reduced (default)
  * @param {string} title: título exposto no cabeçalho
  */
-export default function PageForm({align="center", borderRadius="medium-radius", children, direction = 'vertical', showBorder = true, size='reduced', title }) {
+export default function PageForm({align="center", borderRadius="radius-md", children, direction = 'vertical', showBorder = true, size='reduced', title }) {
     return (
         <div className={`page-form ${direction} ${align} ${borderRadius} ${size}`}>
             <div className="page-form-header">

@@ -1,0 +1,144 @@
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+    padding: 0 8rem;
+    height: fit-content;
+    background: linear-gradient(180deg,#2c3650 0%, #2c3650 33%, #3a4769 66%, #48567a 100%);
+    border-bottom: 2px solid var(--color-primary);
+
+}
+
+.hero-section-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    width: 45%;
+    padding: 1.75rem;
+    border-radius: 2rem;
+}
+
+.hero-section-texts b {
+    font-size: 2.9rem;
+    color: var(--color-primary);
+}
+
+.hero-section-texts h1 {
+    font-weight: 500;
+}
+
+.hero-section-texts p{
+    font-size: 17px;
+    margin-top: .75rem;
+    text-indent: 0;
+    text-align: justify;
+}
+
+.hero-section img {
+    width: 35rem;
+    position: relative;
+}
+
+.page-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    padding:4vh 10vw;
+    width: 100%;
+    background-color: #cc8800;
+}
+
+.page-section:has(.card-grid) {
+    display: block;
+}
+
+.page-section.default {
+    background-color: var(--color-background);
+}
+
+.page-section.alt {
+    background-color: var(--color-background-alt);
+}
+
+.page-section.soft {
+    background-color: var(--color-background-soft);
+}
+
+.page-section.contrast {
+    background-color: var(--color-background-contrast);
+}
+
+.page-section.main {
+    background-color: var(--color-text-main);
+}
+
+.page-section.pinstriped {
+    background-image: url("http://www.transparenttextures.com/patterns/pinstriped-suit.png");
+}
+
+.page-section.grey {
+    background-image: url("https://www.transparenttextures.com/patterns/always-grey.png");
+}
+
+.section-heading {
+    align-self: normal;
+    margin-bottom: 2vh;
+}
+
+.page-section .line-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1vh;
+  }
+  
+  .page-section .line-header h2 {
+    font-size: 2rem;
+    white-space: nowrap;
+    margin: 0;
+    color: var(--color-primary);
+  }
+  
+  .page-section .line-header::after {
+    content: '';
+    flex: 1;
+    height: 4px;
+    background-color: var(--color-primary);
+  }
+
+
+  @media (max-width: 576px) {
+    .page-section {    padding:4vh 4vw;}
+    .hero-section {
+        flex-direction: column-reverse;
+        padding: 0;
+        padding: 1.5rem 0;
+    }
+
+    .hero-section p {
+        text-align: center;
+    }
+
+    .hero-section-texts b {
+        font-size: 2.2rem;
+    }
+
+    .hero-section img {
+        width: 22rem;
+    }
+
+    .hero-section-container {
+        align-items: center;
+        text-align: center;
+        width: 90%;
+        padding: 0.75rem;   
+    }
+    .page-section .line-header {display: block;}
+
+    .page-section .line-header h2 {text-align: center;}
+
+    .page-section .line-header::after {display: none;}
+  }
+  

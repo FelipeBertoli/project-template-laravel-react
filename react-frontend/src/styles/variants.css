@@ -1,0 +1,147 @@
+:is(button, a):hover {
+    filter: brightness(0.9);
+}
+
+:is(button, .button, a):active,
+:is(button, .button, a).active {
+    filter: brightness(0.7);
+}
+
+.button:hover.outlined,
+.button:hover.text{
+    background-color: #00000020;
+}
+
+.shadow {
+    box-shadow: var(--box-shadow);
+}
+
+.button.small {
+    font-size: 12px;
+    padding: .6rem 0.7rem ;
+}
+
+.button.medium {
+    font-size: 13px;
+    padding: .9rem 1.05rem ;
+}
+
+.button.large {
+    font-size: 14px;
+    padding: 1.05rem 1.225rem ;
+}
+
+/* #region Variante Contained*/
+.contained.primary {
+    background-color: var(--color-primary);
+}
+
+.contained.secondary {
+    background-color: var(--color-secondary);
+  }
+
+.contained.black{
+    color: #ffff;
+    background-color: #000000;
+}
+
+.contained.white{
+    color: #000000;
+    background-color:#ffff;
+}
+
+.contained.error {
+    background-color: var(--color-error);
+}
+
+.contained.success {
+    background-color: var(--color-success);
+}
+
+.contained.warning {
+    background-color: var(--color-warning);
+}
+
+/*#endregion*/
+
+
+/* #region Variante Contained + Outlined*/
+.outlined, .contained {
+    border: var(--full-border);
+}
+.contained.primary, .outlined.primary {
+    border-color: var(--color-primary);
+}
+
+.contained.secondary, .outlined.secondary{
+    border-color: var(--color-secondary);
+  }
+
+.contained.black, .outlined.black{
+    border-color: #000000;
+}
+
+.contained.white, .outlined.white {
+    border-color: white;
+}
+
+.contained.error, .outlined.error {
+    border-color: var(--color-error);
+}
+
+.contained.success, .outlined.success {
+    border-color: var(--color-success);
+}
+
+.contained.warning, .outlined.warning {
+    border-color: var(--color-warning);
+}
+
+/*#endregion*/
+
+
+/* #region Variante Outlined + Text*/
+.text {
+    border: none;
+    box-shadow: none !important;
+}
+
+.outlined, .outlined.white, .text {
+    background-color: transparent;
+}
+
+.outlined.primary,
+.text.primary {
+    color: var(--color-primary);
+}
+
+.outlined.secondary,
+.text.secondary {
+    color: var(--color-secondary);
+}
+
+.outlined.black,
+.text.black {
+    color: rgb(0, 0, 0);
+}
+
+.outlined.white,
+.text.white {
+    color:#fff;
+}
+
+.outlined.error,
+.text.error {
+    color: var(--color-error);
+}
+
+.outlined.success,
+.text.success {
+    color: var(--color-success);
+}
+
+.outlined.warning,
+.text.warning {
+    color: var(--color-warning);
+}
+/*#endregion*/

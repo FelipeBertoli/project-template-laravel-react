@@ -4,9 +4,9 @@ import IconButton from '../buttons/IconButton';
 
 /** Props do Componente
  * @param {string} borderStyle: estilo da borda do header - null (default), basic, colorful
- * @param {string} headerBorder: arredondamento das bordas do header - navBorder - none-radius, small-radius (default), medium-radius, large-radius, round-radius
+ * @param {string} headerBorder: arredondamento das bordas do header - navBorder - none-radius, radius-sm (default), radius-md, large-radius, round-radius
  * @param {string} headerSize: width do tamanho do header - default (default), large
- * @param {string} navBorder: arredondamento dos botões de navegação - none-radius, small-radius (default), medium-radius, large-radius, round-radius
+ * @param {string} navBorder: arredondamento dos botões de navegação - none-radius, radius-sm (default), radius-md, large-radius, round-radius
  * @param {string} navStyle: estilo dos botões de navegação - contained, full, outlined, text (default)
  * @param {boolean} showActions: exibir botões de ação - true (default), false
  * @param {boolean} showShadow: exibir sombra do header - true (default), false
@@ -16,7 +16,7 @@ export default function FloatHeader({
   headerBorder = 'round-radius',
   headerSize = 'default',
   itemAlign= 'center',
-  navBorder = 'medium-radius',
+  navBorder = 'radius-md',
   navStyle = 'contained',
   showActions = true,
   showShadow = false }) {

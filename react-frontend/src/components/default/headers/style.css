@@ -8,10 +8,11 @@
 .header {
     display: flex;
     align-items: center;
-    width: 100vw;
-    background-color: var(--color-background-alt);
+    width: 100%;
+    background-color: var(--color-background);
     z-index: 9999999;
     position: fixed;
+    height: var(--header-height);
 }
 
 .header > * {
@@ -60,7 +61,7 @@
 
 .header-actions {
     display: flex;
-    gap: 1rem;
+    gap: 1.25rem;
 }
 
 .header-left.menu {
@@ -70,7 +71,7 @@
 
 /* Borda do Header*/
 .header.basic {
-    border-bottom: var(--border-radius-sm);
+    border-bottom: 2.5px solid var(--color-grey);
 }
 
 .header.colorful {
@@ -95,8 +96,7 @@
 .header-nav-item {
     text-transform: uppercase;
     font-family: var(--font-heading);
-    font-size: 12px;
-    font-weight: 600;
+    font-size: 16px;
     display: flex;
     align-items: center;
     color: var(--color-text-main);
@@ -122,7 +122,7 @@
 
 .header-nav-item.text{  
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 300;
     text-transform: capitalize;
 }
 
@@ -136,14 +136,13 @@
 
 .header-nav-item.outlined.active,
 .header-nav-item.contained.active{
-    color: var(--color-primary-active);
-    border-color: var(--color-primary-active);
+    color: var(--color-primary);
+    border-color: var(--color-primary);
     text-decoration: none;
 }
 
-
 .header-nav-item.contained:hover {
-    background-color: var(--color-primary-hover);
+    background-color: var(--color-primary);
     color: white;
     text-decoration: none;
 }
@@ -154,14 +153,14 @@
 }
 
 .header-nav-item.outlined:hover {
-    background-color: var(--color-primary-hover);
-    border-color: var(--color-primary-hover);
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
     color: white;
 }
 
 
 .header-nav-item.text:hover{
-    color: var(--color-primary-hover);
+    color: var(--color-primary);
 
 }
 
@@ -202,7 +201,7 @@
 
 /* Estilos de borda para o float */
 .float.basic {
-    border: var(--border);
+    border: var(--line-border);
 }
 
 .float.colorful {
@@ -245,3 +244,27 @@
 }
 
 /*#endregion */
+
+@media (max-width: 576px) {
+    .header {
+        flex-direction: column;
+        height: fit-content;
+        border-bottom: 1px solid black;
+    }
+
+    .header-toolbar {
+        margin-top: .5vh;
+        width: fit-content;
+        background: var(--color-background-contrast);
+    }
+
+    .header.contained-nav {
+        padding: 0;
+        padding-top: .5rem;
+
+    }
+
+    .header-actions {
+        display: none;
+    }
+}

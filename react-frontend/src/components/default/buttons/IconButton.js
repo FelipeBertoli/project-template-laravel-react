@@ -12,7 +12,7 @@ import './style.css';
 export default function IconButton({ action, color = 'primary' , icon='bx bxs-image', size = 'sm', type = 'contained' }) {
   return (
     <button onClick={action} className={`button icon-button ${type} ${color} ${size}`}>
-      <i class={`bx bx-${icon}`}/>
+      <i class={`fi fi-${icon}`}/>
     </button>
   );
 }

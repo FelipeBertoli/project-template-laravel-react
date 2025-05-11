@@ -1,53 +1,69 @@
 import React, { useState } from 'react';
 import "./style.css";
-import InputLabel from '../texts/InputLabel';
 import Tooltip from '../messages/Tooltip';
 
 /**
  * Props do Componente
- * @param {string} icon: ícone do componente
+ * @param {string} trailIcon: ícone do componente
+ * @param {string} leadIcon: ícone à esquerda do input
  * @param {string} label: rótulo do componente
- * @param {string} message: mensagem de ajuda, erro ou aviso
  * @param {function} onChange: função de callback ao alterar o valor
  * @param {string} placeholder: texto de sugestão no campo de input
  * @param {boolean} required: define se o campo é obrigatório
  * @param {string} type: tipo do componente - e-mail, password, text (default)
  * @param {string} value: valor do componente
+ * @param {string} style: 'filled' ou 'outlined'
  */
 
-export default function TextInput({ icon, label, message, onChange, placeholder, required = false, type='text', value }) {
+export default function TextInput({
+  label = "Label",
+  name,
+  type = 'text',
+  required = false,
+  value,
+  onChange,
+  style = 'outlined',
+  trailIcon = null,
+  leadIcon = null,
+  errorText,
+  helperText
+}) {
   const [showPassword, setShowPassword] = useState(false);
 
-  const inputType = type === 'password' && showPassword ? 'text' : type;
+  const inputType = type === 'password' ? (showPassword ? 'text' : 'password') : type;
 
   return (
-    <div className="text-input">
-      {label != null && <InputLabel label={label} required={required} />}
+    <div className={`text-input ${style} ${leadIcon ? 'with-lead-icon' : ''}`}>
+      {leadIcon && <i className={`fi ${leadIcon} input-icon lead-icon`}></i>}
 
-      <div className='text-input-box'>
-        <input
-          className='text-input-field'
-          placeholder={placeholder}
-          type={inputType}
-          value={value}
-          onChange={onChange}
-          required={required}
-        />
+      <input
+        type={inputType}
+        name={name}
+        id={name}
+        required={required}
+        value={value}
+        onChange={onChange}
+        placeholder=" "
+      />
 
-        {icon != null && type !== 'password' && (
-          <i className={`fi ${icon} text-input-icon`}></i>
-        )}
+      <label htmlFor={name}>
+        {label} {required && <span>*</span>}
+      </label>
 
-        {type === 'password' && (
-          <i
-            className={`fi ${showPassword ? 'fi-ss-eye-crossed' : 'fi-ss-eye'} text-input-icon`}
-            onClick={() => setShowPassword(prev => !prev)}
-            style={{ cursor: 'pointer' }}
-          ></i>
-        )}
-      </div>
+      {type === 'password' && (
+        <i
+          className={`fi ${showPassword ? 'fi-ss-eye-crossed' : 'fi-ss-eye'} input-icon trail-icon`}
+          onClick={() => setShowPassword(prev => !prev)}
+        ></i>
+      )}
 
-      {message != null && <Tooltip message={message} />}
+      {trailIcon && type !== 'password' && (
+        <i className={`fi ${trailIcon} input-icon trail-icon`}></i>
+      )}
+      {errorText != null && <Tooltip message={errorText} />}
+      {helperText != null && <small className='helper-text'>{helperText}</small>}
+
+
     </div>
   );
 }

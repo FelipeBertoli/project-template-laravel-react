@@ -11,9 +11,16 @@
 
 .button-form-group {
   display: flex;
-  flex-direction: column;
   gap: .7rem;
   padding-top: .4rem;
+}
+
+.button-form-group.column {
+  flex-direction: column;
+}
+
+.button-form-group.row {
+  flex-direction: row;
 }
 
 .input-form-group {
@@ -26,4 +33,23 @@
 .input-form-group a {
   font-size: 12px;
   align-self: flex-end;
+}
+
+.contact-form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+  padding: 1.5rem;
+  background-color: var(--color-background-alt);
+  border-radius: var(--border-radius-md);
+}
+
+@media (max-width: 576px) {
+  .contact-form-group-row {
+    flex-direction: column;
+  }
+
 }
