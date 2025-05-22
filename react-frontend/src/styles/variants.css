@@ -8,8 +8,10 @@
 }
 
 .button:hover.outlined,
-.button:hover.text{
-    background-color: #00000020;
+.button:hover.text,
+.nav-link:hover.outlined, 
+.nav-link:hover.text{
+    background-color: var(--color-action-hover);
 }
 
 .shadow {
@@ -18,36 +20,42 @@
 
 .button.small {
     font-size: 12px;
-    padding: .6rem 0.7rem ;
+    padding: .6rem 0.7rem;
 }
 
 .button.medium {
     font-size: 13px;
-    padding: .9rem 1.05rem ;
+    padding: .9rem 1.05rem;
 }
 
 .button.large {
     font-size: 14px;
-    padding: 1.05rem 1.225rem ;
+    padding: 1.05rem 1.225rem;
 }
 
 /* #region Variante Contained*/
+.contained,
 .contained.primary {
     background-color: var(--color-primary);
+    border-color: var(--color-primary);
 }
 
 .contained.secondary {
     background-color: var(--color-secondary);
-  }
+}
 
-.contained.black{
+.contained.main {
+    background-color: var(--color-text-main);
+}
+
+.contained.black {
     color: #ffff;
     background-color: #000000;
 }
 
-.contained.white{
+.contained.white {
     color: #000000;
-    background-color:#ffff;
+    background-color: #ffff;
 }
 
 .contained.error {
@@ -64,36 +72,52 @@
 
 /*#endregion*/
 
-
 /* #region Variante Contained + Outlined*/
-.outlined, .contained {
-    border: var(--full-border);
+.outlined,
+.contained,
+.text {
+    border-width: 2px;
+    border-style: solid;
 }
-.contained.primary, .outlined.primary {
+
+.contained.primary,
+.outlined.primary {
     border-color: var(--color-primary);
 }
 
-.contained.secondary, .outlined.secondary{
+.contained.secondary,
+.outlined.secondary {
     border-color: var(--color-secondary);
-  }
+}
 
-.contained.black, .outlined.black{
+.contained.main,
+.outlined.main {
+    border-color: var(--color-text-main);
+}
+
+
+.contained.black,
+.outlined.black {
     border-color: #000000;
 }
 
-.contained.white, .outlined.white {
+.contained.white,
+.outlined.white {
     border-color: white;
 }
 
-.contained.error, .outlined.error {
+.contained.error,
+.outlined.error {
     border-color: var(--color-error);
 }
 
-.contained.success, .outlined.success {
+.contained.success,
+.outlined.success {
     border-color: var(--color-success);
 }
 
-.contained.warning, .outlined.warning {
+.contained.warning,
+.outlined.warning {
     border-color: var(--color-warning);
 }
 
@@ -102,11 +126,13 @@
 
 /* #region Variante Outlined + Text*/
 .text {
-    border: none;
+    border-color: transparent;
     box-shadow: none !important;
 }
 
-.outlined, .outlined.white, .text {
+.outlined,
+.outlined.white,
+.text {
     background-color: transparent;
 }
 
@@ -116,18 +142,29 @@
 }
 
 .outlined.secondary,
-.text.secondary {
+.text.secondary,
+.outlined.secondary i,
+.text.secondary i {
     color: var(--color-secondary);
 }
 
+.outlined.main,
+.text.main,
+.outlined.main i,
+.text.main i {
+    color: var(--color-text-main);
+}
+
 .outlined.black,
-.text.black {
+.text.black,
+.outlined.black i,
+.text.black i {
     color: rgb(0, 0, 0);
 }
 
 .outlined.white,
 .text.white {
-    color:#fff;
+    color: #fff;
 }
 
 .outlined.error,
@@ -144,4 +181,5 @@
 .text.warning {
     color: var(--color-warning);
 }
+
 /*#endregion*/

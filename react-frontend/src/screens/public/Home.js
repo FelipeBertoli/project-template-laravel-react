@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { login } from '../../utils/services/AuthService';
-import { ActionButton, ButtonFormGroup, InputFormGroup, PageContainer, PageForm, PageMain, TextInput, TextLink, ThemeToggle } from '../../components/ComponentsModule';
+import { loginInvoker } from '../../utils/services/AuthService';
+import { ActionButton, ButtonFormGroup, InputFormGroup, PageForm, TextInput, TextLink, ThemeToggle } from '../../components/ComponentsModule';
 
 export default function HomePublic() {
   const [email, setEmail] = useState('');
@@ -10,7 +10,7 @@ export default function HomePublic() {
   const navigate = useNavigate();
 
   async function handleLogin() {
-    await login({ email, password });
+    await loginInvoker({ email, password });
     navigate(0);
   }
 
@@ -24,6 +24,7 @@ export default function HomePublic() {
       <ButtonFormGroup>
         <ActionButton label="Entrar" action={handleLogin} />
         <ActionButton label="Cadastrar-se" action={() => navigate('register')} variant="text" />
+        <ActionButton color='main' variant='outlined'/>
         <ThemeToggle />
       </ButtonFormGroup>
     </PageForm>

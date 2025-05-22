@@ -2,8 +2,8 @@ import FloatMenu from "./FloatMenu";
 import ClassicMenu from "./ClassicMenu";
 
 
-export default function Menu({ type = 'classic', ...props }) {
-    switch (type) {
+export default function Menu({ menuType = 'classic', ...props }) {
+    switch (menuType) {
         case 'float':
             return <FloatMenu {...props} />;
         case 'classic':

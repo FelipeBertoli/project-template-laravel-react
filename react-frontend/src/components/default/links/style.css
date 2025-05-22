@@ -27,19 +27,55 @@
 }
 
 .nav-link {
-    border-radius: 12px;
+    display: flex;
+    gap: 1rem;
     color: var(--color-text-main);
-    font-family: 'Orbitron';
+    font-family: var(--font-heading);
+    font-size: 14px;
     height: 100%;
-    padding: .5rem 0;
+    padding: .5rem .5rem;
 }
 
 .nav-link i {
     color: var(--color-text-main);
+    font-size: 20px;
+} 
+
+.header-nav .tooltip {
+    display: none;
+}
+
+.sidebar.fit .nav-link {
+    padding-left: .8rem;
+    padding-right: .8rem;
+}
+
+.sidebar.full .nav-link {
+    padding-left: .6rem;
+    padding-right: .6rem;
+}
+
+.nav-link.smaller {
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+}
+
+.nav-link.small {
+    padding-top: .50rem;
+    padding-bottom: .50rem;
+}
+
+.nav-link.medium {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+}
+
+.nav-link.large{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .nav-link span {
-    font-size: 14px;
     font-weight: 400;
     white-space: nowrap;
     opacity: 1;
@@ -54,7 +90,7 @@
     font-family: var(--font-heading);
 }
 
-.nav-link .tooltip {
+.sidebar .nav-link .tooltip {
     position: absolute;
     top: 50;
     left: calc(100% - 5px);
@@ -71,7 +107,7 @@
     transition: 0s;
 }
 
-.nav-link:hover .tooltip {
+.sidebar .nav-link:hover .tooltip {
     font-family: var(--font-body);
     font-size: 13px;
     color: var(--color-text-main);
@@ -81,21 +117,21 @@
     left: calc(100% + 20px);
 }
 
-.nav-link:hover {
-    background: var(--color-primary);
-    border-radius: 12px;
-}
-
 .nav-link.active span,
 .nav-link.active i {
     color: var(--color-primary);
 }
-.nav-link.active span {
-    font-weight: 700;
+
+.text.contained {
+    background-color: transparent;
+    border-color: transparent;
 }
 
-.nav-link:hover span,
-.nav-link:hover i{
-  transition: all 0.5s ease;
-  color: var(--color-text-main);
+.text.contained:hover {
+    background-color: var(--color-primary);
+    filter: brightness(1.0);
+}
+
+.text.contained:hover span, .text.contained:hover i {
+    color: white;
 }

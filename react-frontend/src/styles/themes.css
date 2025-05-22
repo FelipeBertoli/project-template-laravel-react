@@ -12,7 +12,7 @@
   
     /* Textos */
     --color-text-main: #0A0A0A;
-    --color-text-main-hover: #FFFFFF;
+    --color-text-main-alt: #FFFFFF;
     --color-grey: #dcdcdc;
     --color-text-secondary: #666666;
     --color-placeholder: #888888;
@@ -26,6 +26,8 @@
     --color-warning: #FF8C00;
     --color-error: #EF476F;
     --color-highlight: #6F42C1;
+
+    --color-action-hover: #00000020;
   
   }
   
@@ -38,9 +40,11 @@
     --color-background-opposite: #FFFFFF;
   
     --color-text-main: #FFFFFF;
-    --color-text-main-hover: #0A0A0A;
+    --color-text-main-alt: #0A0A0A;
     --color-text-secondary: #B0B0B0;
+    --color-placeholder: #c7c7c7;
     --border: 0.6px solid #2a2a2a;
   
+    --color-action-hover: #ffffff20;
   }
   

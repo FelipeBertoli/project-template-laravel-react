@@ -21,11 +21,13 @@
 
 * {
   box-sizing: border-box;
-  transition: var(--transition);
   margin: 0;
   padding: 0;
 }
 
+button, a, input, .sidebar, .sidebar > *, .header {
+  transition: var(--transition);
+}
 
 html {
   scroll-behavior: smooth;
@@ -33,26 +35,14 @@ html {
 
 
 i[class^="fi-ss-"],
-i[class*=" fi-ss-"] {
+i[class*=" fi-ss-"],
+i[class^="fi-rs-"],
+i[class*=" fi-rs-"]  {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-#btn {
-  position: absolute;
-  top: 50%;
-  left: 0%;
-  transform: translateY(-50%);
-  font-size: 22px;
-  font-size: 23px;
-  text-align: center;
-  cursor: pointer;
-}
-
-.open #btn {
-  left: 0%;
-}
 
 .button-spinner {
   position: absolute;

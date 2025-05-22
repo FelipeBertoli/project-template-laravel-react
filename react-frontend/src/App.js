@@ -5,10 +5,16 @@ import { Footer, Header } from './components/ComponentsModule';
 import AppRoutes from './utils/routes/AppRoutes';
 
 function App() {
-  const navList = [
+  const mainNavList = [
     { label: "Item 1", link: "#1" },
     { label: "Item 2", link: "#2" },
-    { label: "Item 3", link: "#3"}
+    { label: "Item 3", link: "#3" }
+  ];
+
+  const menuNavList = [
+    { label: "Item 1", link: "#1", icon: "picture" },
+    { label: "Item 2", link: "#2", icon: "picture" },
+    { label: "Item 3", link: "#3", icon: "picture" }
   ];
 
   const actionList = [
@@ -22,9 +28,9 @@ function App() {
     <AuthProvider>
       <Router>
         <div className="app-wrapper">
-          <Header navList={navList} navStyle="outlined" actionList={actionList} />
+          <Header type="classic" menuNavList={menuNavList} headerNavList={mainNavList} headerActionList={actionList} />
           <AppRoutes />
-          <Footer type="classic" navList={navList} actionList={actionList} />
+          <Footer type="classic" navList={mainNavList} actionList={actionList} />
         </div>
       </Router>
     </AuthProvider>

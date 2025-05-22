@@ -1,5 +1,6 @@
 import React from 'react';
 import './style.css';
+import Icon from '../elements/Icon';
 
 /** Props do Componente
  * @param {string} action: ação passada para o componente
@@ -9,10 +10,10 @@ import './style.css';
  * @param {string} size: tamanho do componente - xs, sm (default), md, lg, xl, xxl
  * @param {string} type: tipo do componente - contained (default), outlined, text
  */
-export default function IconButton({ action, color = 'primary' , icon='bx bxs-image', size = 'sm', type = 'contained' }) {
+export default function IconButton({ action, color = 'primary' , iconImage, iconStyle='solid', size = 'sm', type = 'contained' }) {
   return (
     <button onClick={action} className={`button icon-button ${type} ${color} ${size}`}>
-      <i class={`fi fi-${icon}`}/>
+      <Icon image={iconImage} style={iconStyle}/>
     </button>
   );
 }

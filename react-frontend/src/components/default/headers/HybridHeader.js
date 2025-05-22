@@ -1,59 +1,48 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './style.css';
 import IconButton from '../buttons/IconButton';
 import Menu from '../menus/Menu';
 import { Logo } from '../../ComponentsModule';
 
-/**
- * Props do Componente
- * @param {string} borderStyle: estilo da borda do header - null (default), basic, colorful
- * @param {string} itemAlign: tipo de espaçamento dos botões - spacing (default), center, end
- * @param {string} menuType: tipo de menu - classic (default), float
- * @param {boolean} showActions: exibir botões de ação - true (default), false
- * @param {boolean} showShadow: exibir sombra do header - true (default), false
- */
 export default function HybridHeader({
-  borderStyle = 'basic',
-  itemAlign = 'end',
-  menuType = 'slide',
-  showActions = true,
-  showShadow = true
-
+  headerActionList, /* lista de botões de ação do componente */
+  headerBorderStyle = 'basic', /* estilo da borda do header - null, basic, colorful */
+  headerItemAlign = 'end', /* tipo de espaçamento dos botões - spacing, center, end */
+  showHeaderShadow = true, /* exibir sombra do header - true, false */
+  menuType = 'classic',
+  menuIsOpen = false,
+  ...menuProps
 }) {
-  const [headerShadow, setHeaderShadow] = useState('');
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(menuIsOpen);
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
   };
 
   const getMenuIconClass = () => {
-    return sidebarOpen ? 'bx bx-x' : 'bx bx-menu';
+    return sidebarOpen ? 'fi fi-rs-cross-small' : 'fi fi-rs-burger-menu';
   };
 
-  useEffect(() => {
-    showShadow && setHeaderShadow('header-shadow');
-  }, [showShadow]);
-
-  const hybridHeaderClasses = `header hybrid ${borderStyle} ${headerShadow}`;
-
+  const hybridHeaderClasses = `header hybrid ${headerBorderStyle} ${showHeaderShadow ? 'header-shadow' : ''}`;
 
   return (
     <div className={hybridHeaderClasses}>
 
       <i className={getMenuIconClass()} id="btn" onClick={toggleSidebar}></i>
       {(menuType === 'float') && <Logo />}
-      <div className={`header-toolbar header-flex ${itemAlign}`}>
+      <div className={`header-toolbar header-flex ${headerItemAlign}`}>
 
-        {showActions &&
+        {headerActionList && (
           <div className="header-actions header-flex">
-            <IconButton size='sm' color='secondary' type='contained' />
-            <IconButton size='sm' color='secondary' type='contained' />
-            <IconButton size='sm' color='secondary' type='contained' />
-          </div>}
+            {headerActionList.map((actionNav, index) => (
+              <IconButton key={index} action={() => window.open(actionNav.link)} icon={actionNav.icon} size="sm" type="contained" />
+            ))}
+          </div>
+        )}
       </div>
 
-      <Menu fromHeader={true} type={menuType} sidebarOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
+      <Menu menuType={menuType} isMenuOpen={sidebarOpen} {...menuProps} />
+
     </div>
   );
 }

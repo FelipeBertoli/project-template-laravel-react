@@ -1,57 +1,40 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './style.css'
 import IconButton from '../buttons/IconButton';
 import { Logo } from '../../ComponentsModule';
+import NavLink from '../links/NavLink';
 
 export default function ClassicHeader({
-  borderStyle,
-  itemAlign = 'spacing',
-  navStyle = 'text',
-  navBorder = 'radius-sm',
-  showNav = true,
-  showActions = true,
-  showShadow = false,
-  navList,
-  actionList
+  headerActionList,
+  headerBorderStyle,
+  headerItemAlign = 'spacing',
+  headerNavList,
+  headerNavStyle = 'text',
+  showHeaderShadow = true,
+  ...props
 }) {
-  const [headerShadow, setHeaderShadow] = useState('');
-  const [activeSection, setActiveSection] = useState('');
 
-  useEffect(() => {
-    if (showShadow) setHeaderShadow('header-shadow');
-
-  }, [showShadow]);
-
-  const headerClasses = `header ${borderStyle} ${
-    navStyle === 'contained' || navStyle === 'outlined' || navStyle === 'text'
+  const headerClasses = `header ${headerBorderStyle} ${showHeaderShadow ? 'header-shadow' : ''} ${props.navStyle === 'contained' || props.navStyle === 'outlined' || props.navStyle === 'text'
       ? 'contained-nav'
       : ''
-  }`;
+    }`;
 
   return (
     <div className={headerClasses}>
-      <Logo width="250px" />
-      <div className={`header-toolbar header-flex ${itemAlign}`}>
-        {showNav && (
+      <Logo width="200px" />
+      <div className={`header-toolbar header-flex ${headerItemAlign}`}>
+        {headerNavList && (
           <nav className="header-nav header-flex">
-            {navList.map((navLink, index) => {
-              const sectionId = navLink.link.replace('#', '');
-              const isActive = activeSection === sectionId ? 'active' : '';
+            {headerNavList.map((index) => {
               return (
-                <a
-                  key={index}
-                  href={navLink.link}
-                  className={`header-nav-item ${navStyle} ${navBorder} ${isActive}`}
-                >
-                  {navLink.label}
-                </a>
-              );
+                <NavLink key={index} variant={headerNavStyle} {...props} />
+              )
             })}
           </nav>
         )}
-        {showActions && (
+        {headerActionList && (
           <div className="header-actions header-flex">
-            {actionList.map((actionNav, index) => (
+            {headerActionList.map((actionNav, index) => (
               <IconButton key={index} action={() => window.open(actionNav.link)} icon={actionNav.icon} size="sm" type="contained" />
             ))}
           </div>

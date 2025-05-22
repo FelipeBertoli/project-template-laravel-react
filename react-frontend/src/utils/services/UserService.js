@@ -1,6 +1,6 @@
 import instance from "../axios";
 
-export const createUser = async (userData) => {
+export const createUserInvoker = async (userData) => {
     try {
         const response = await instance.post('/user/create', userData);
         return response.data;
@@ -10,7 +10,7 @@ export const createUser = async (userData) => {
     }
 };
 
-export const updateUser = async (userId, userData) => {
+export const updateUserInvoker = async (userId, userData) => {
     try {
         const response = await instance.put(`/user/update`, { id: userId, ...userData });
         return response.data;
@@ -20,7 +20,7 @@ export const updateUser = async (userId, userData) => {
     }
 };
 
-export const deleteUser = async (userId) => {
+export const deleteUserInvoker = async (userId) => {
     try {
         const response = await instance.delete(`/user/${userId}`);
         return response.data;
@@ -30,7 +30,7 @@ export const deleteUser = async (userId) => {
     }
 };
 
-export const getAllUsers = async () => {
+export const getAllUsersInvoker = async () => {
     try {
         const response = await instance.get('/user/show');
         return response.data;
@@ -40,7 +40,7 @@ export const getAllUsers = async () => {
     }
 };
 
-export const getUserById = async (userId) => {
+export const getUserByIdInvoker = async (userId) => {
     try {
         const response = await instance.get(`/user/show/${userId}`);
         return response.data;

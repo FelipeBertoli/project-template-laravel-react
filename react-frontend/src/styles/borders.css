@@ -1,19 +1,19 @@
-.none-radius {
+.border-none {
     border-radius: 0;
 }
 
-.radius-sm {
+.border-small {
     border-radius: var(--border-radius-sm);
 }
 
-.radius-md {
+.border-medium {
     border-radius: var(--border-radius-md);
 }
 
-.radius-lg {
+.border-large {
     border-radius: var(--border-radius-lg);
 }
 
-.radius-full {
+.border-full {
     border-radius: var(--border-radius-full);
 }

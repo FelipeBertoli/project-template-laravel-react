@@ -1,5 +1,6 @@
 import React from 'react';
 import './style.css';
+import Icon from '../elements/Icon';
 
 /**
  * Props do Componente
@@ -11,18 +12,24 @@ import './style.css';
  * @param {string} style - estilo visual do link - contained, outlined, text (default)
  * @param {string} textFont - classe da fonte do texto - body, heading (default)
  */
+
 export default function NavLink({
     active,
-    icon = "image",
+    iconStyle,
+    iconImage,
     label = 'Item',
+    borderRadius = 'medium',
     link,
-    origin,
-    style = 'text',
-    textFont = "heading"
-  }) {
+    navVariant = 'text',
+    textFont = 'heading',
+    color = 'black',
+    size = 'small'
+  }) 
+
+  {
     return (
-        <a className={`link nav-link ${style} ${active ? 'active' : ''}`} href={link}>
-            {icon && <i className={`bx bx-${icon}`}></i>}
+        <a className={`link nav-link text ${navVariant} ${color} ${active ? 'active' : ''} ${size} border-${borderRadius}`} href={link}>
+            {iconImage && <Icon Image={iconImage} style={iconStyle}/>}
             <span className={`${textFont}`}>{label}</span>
             {origin = "menu" && <span className="tooltip">{label}</span>}
         </a>

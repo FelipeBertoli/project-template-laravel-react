@@ -1,12 +1,12 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import {  logout } from '../../utils/services/AuthService';
+import {  logoutInvoker } from '../../utils/services/AuthService';
 
 export default function HomePrivate() {
   const navigate = useNavigate();
 
   async function handleLogout() {
-      await logout();
+      await logoutInvoker();
       navigate(0);
   }
 

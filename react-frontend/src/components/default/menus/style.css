@@ -1,3 +1,218 @@
+/*#region Classic Menu*/
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: var(--color-background-contrast);
+  z-index: 99;
+  border-right: var(--line-border);
+}
+
+.sidebar.fit {
+  padding: 0;
+  width: 50px;
+}
+
+.sidebar.full {
+  width: 70px;
+  padding: 6px 14px;
+}
+
+/*#region Open e Close Menu*/
+
+
+.sidebar.open {
+  width: 250px;
+}
+
+.sidebar.open li .tooltip {
+  display: none;
+}
+
+#btn {
+  position: absolute;
+  top: 50%;
+  left: 2.5vw;
+  transform: translateY(-50%);
+  font-size: 22px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.sidebar li .link span {
+  opacity: 0;
+}
+
+.sidebar.open li .link span {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.menu-section {
+  height: 60px;
+}
+
+/*#endregion*/
+
+/*#region Navlist e espaçamento do Menu*/
+.sidebar .nav-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  height: 100%;
+  padding: 0;
+}
+
+.sidebar .nav-list.smaller {
+  gap: .5rem;
+}
+
+.sidebar .nav-list.small {
+  gap: 1rem;
+}
+
+.sidebar .nav-list.medium {
+  gap: 1.5rem;
+}
+
+.sidebar .nav-list.large {
+  gap: 2rem;
+}
+/*#endregion*/
+
+/*#region Logo do Menu*/
+.sidebar .logo-details {
+  height: 60px;
+  padding-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 1rem;
+}
+
+.sidebar.fit .logo-details {
+  left: .25rem;
+}
+
+.sidebar.open .logo-details {
+  left: 3rem;
+}
+
+.sidebar.fit.open .logo-details {
+  left: 2.75rem;
+}
+
+.sidebar.reverse .logo-details {
+  bottom: 0;
+  top: unset;
+}
+
+.sidebar .logo-details .logo {
+  pointer-events: none;
+  transition: none;
+}
+
+.sidebar.open .logo-details .logo {
+  margin-left: -20px;
+  width: 10px;
+  visibility: visible;
+  pointer-events: auto;
+  transition: var(--transition);
+}
+
+/*#endregion*/
+
+/*#region Profile do Menu*/
+.sidebar li.profile {
+  position: fixed;
+  height: 60px;
+  left: 0;
+  bottom: 0;
+  background: var(--color-background-soft);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+}
+
+.sidebar.fit li.profile {
+  padding: 10px 8px;
+  width: 50px;
+}
+
+.sidebar.full li.profile {
+  width: 70px;
+}
+
+.sidebar.reverse li.profile {
+  top: 0;
+  bottom: unset;
+}
+
+.sidebar .profile-content {
+  display: flex;
+  align-items: center;
+  opacity: 1;
+}
+
+.sidebar.open li.profile {
+  width: 250px;
+}
+
+.sidebar li .profile-details {
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+}
+
+.sidebar.open li .profile-details {
+  opacity: 1;
+}
+
+.sidebar li img {
+  background-color: white;
+  height: 45px;
+  width: 45px;
+  object-fit: cover;
+  border-radius: 2rem;
+  margin-right: 10px;
+}
+
+.sidebar.fit li img {
+  height: 35px;
+  width: 35px;
+}
+
+.sidebar .profile .icon-button {
+  position: absolute;
+  top: 50%;
+  right: 25%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  display: none;
+  opacity: 0;
+}
+
+.sidebar.open .profile .icon-button {
+  right: 20px;
+  display: block;
+  opacity: 1;
+}
+
+/*#endregion*/
+
+@media (max-width: 420px) {
+  .sidebar li .tooltip {
+    display: none;
+  }
+}
+/*#endregion*/
+
+/*#region Float Menu*/
 .float-menu {
   position: fixed;
   opacity: 0;
@@ -48,174 +263,5 @@
 
 }
 
-.sidebar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 50px;
-  background: var(--color-background-contrast);
-  padding: 6px 14px;
-  z-index: 99;
-  border-right: var(--line-border);
-}
+/*#endregion*/
 
-.sidebar.open{
-  width: 250px;
-}
-.sidebar .logo-details{
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.sidebar .logo-details .logo {
-  pointer-events: none;
-  transition: none;
-}
-
-.sidebar.open .logo-details .logo {
-  margin-left: -20px;
-  width: 10px;
-  visibility: visible;
-  pointer-events: auto;
-
-  transition: var(--transition);
-}
-
-.sidebar .logo-details #btn{
-  position: absolute;
-  top: 35%;
-  right: 30%;
-  transform: translateY(-50%);
-  font-size: 22px;
-  font-size: 23px;
-  text-align: center;
-  cursor: pointer;
-}
-
-.sidebar.open .logo-details #btn{
-  right: 0%;
-}
-
-.sidebar .nav-link i{
-  min-width: 50px;
-  font-size: 24px;
-  text-align: center;
-}
-
-.sidebar .nav-list{
-  margin-top: 20px;
-  height: 100%;
-  padding: 0;
-}
-.sidebar li{
-  position: relative;
-  margin: 8px 0;
-  list-style: none;
-}
-
-.sidebar.open li .tooltip{
-  display: none;
-}
-.sidebar input{
-  font-size: 15px;
-  color: #FFF;
-  font-weight: 400;
-  outline: none;
-  height: 50px;
-  width: 100%;
-  width: 50px;
-  border: none;
-  border-radius: 12px;
-  background: var(--color-background-soft);
-
-}
-.sidebar.open input{
-  padding: 0 20px 0 50px;
-  width: 100%;
-}
-.sidebar .bx-search{
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  font-size: 22px;
-  background: #1d1b31;
-  color: #FFF;
-}
-.sidebar.open .bx-search:hover{
-  background: #1d1b31;
-  color: #FFF;
-}
-.sidebar .bx-search:hover{
-  background: #FFF;
-  color: #11101d;
-}
-
-
-.sidebar li .link span {
-  opacity: 0;
-}
-.sidebar.open li .link span{
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.sidebar li.profile{
-  position: fixed;
-  height: 60px;
-  width: 50px;
-  left: 0;
-  bottom: -8px;
-  padding: 10px 14px;
-  background: var(--color-background-soft);
-  overflow: hidden;
-}
-
-.sidebar .profile-content {
-  display: flex;
-  align-items: center;
-  opacity: 0;
-}
-
-.sidebar.open .profile-content {
-  opacity: 1;
-}
-
-.sidebar.open li.profile{
-  display: flex;
-    align-items: center;
-  width: 250px;
-}
-.sidebar li .profile-details{
-  display: flex;
-flex-direction: column;
-}
-.sidebar li img{
-  background-color: white;
-  height: 45px;
-  width: 45px;
-  object-fit: cover;
-  border-radius: 2rem;
-  margin-right: 10px;
-}
-
-.sidebar .profile .icon-button{
-  position: absolute;
-  top: 50%;
-  right: 25%;
-  transform: translateY(-50%);
-  font-size: 18px;
-}
-.sidebar.open .profile  .icon-button{
-  right: 20px;
-}
-
-@media (max-width: 420px) {
-  .sidebar li .tooltip{
-    display: none;
-  }
-}
